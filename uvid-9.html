@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KUMPULAN VIDEO VIRAL</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#fff;
+  color:#111;
+}
+
+.header{
+  height:76px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 18px;
+  border-bottom:1px solid #ddd;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:#20c86b;
+  font-size:27px;
+  font-weight:700;
+}
+
+.wa-icon{
+  width:34px;
+  height:34px;
+  border:3px solid #20c86b;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:19px;
+}
+
+.menu{
+  font-size:34px;
+}
+
+.container{
+  width:min(650px,100%);
+  margin:auto;
+  padding:42px 18px 60px;
+  text-align:center;
+}
+
+.profile{
+  width:170px;
+  height:170px;
+  border-radius:50%;
+  object-fit:cover;
+  background:#eee;
+  margin:0 auto 26px;
+  display:block;
+}
+
+h1{
+  font-size:40px;
+  line-height:1.1;
+  margin-bottom:28px;
+}
+
+.video-list{
+  display:grid;
+  gap:10px;
+}
+
+.video-card{
+  width:100%;
+  border:0;
+  background:transparent;
+  color:#2869a8;
+  font-size:23px;
+  padding:7px;
+  cursor:pointer;
+}
+
+.video-card:hover{
+  text-decoration:underline;
+}
+
+.play{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:32px;
+  height:32px;
+  margin-right:6px;
+  border-radius:50%;
+  background:#25d366;
+  color:#fff;
+  font-size:14px;
+}
+
+.followers{
+  font-size:18px;
+  margin:25px 0;
+}
+
+.viewer{
+  display:none;
+  margin-top:28px;
+}
+
+.viewer.active{
+  display:block;
+}
+
+.viewer video{
+  width:100%;
+  max-height:70vh;
+  border-radius:14px;
+  background:#000;
+  display:block;
+}
+
+.video-title{
+  font-size:22px;
+  font-weight:700;
+  margin:16px 0;
+}
+
+.back{
+  border:0;
+  background:#f1f1f1;
+  padding:13px 22px;
+  border-radius:30px;
+  font-size:17px;
+  cursor:pointer;
+}
+
+.footer{
+  background:#111820;
+  color:#fff;
+  text-align:center;
+  padding:25px 18px;
+}
+
+@media(max-width:600px){
+
+  .brand{
+    font-size:24px;
+  }
+
+  .profile{
+    width:150px;
+    height:150px;
+  }
+
+  h1{
+    font-size:35px;
+  }
+
+  .video-card{
+    font-size:21px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+
+  <div class="brand">
+    <span class="wa-icon">◔</span>
+    <span>WhatsApp</span>
+  </div>
+
+  <div class="menu">☰</div>
+
+</header>
+
+
+<main class="container">
+
+  <!-- FOTO PROFIL -->
+  <!-- Ganti URL di bawah dengan foto kamu -->
+  <img
+    class="profile"
+    src="https://via.placeholder.com/400"
+    alt="Kumpulan Video Viral"
+  >
+
+
+  <h1>KUMPULAN VIDEO VIRAL</h1>
+
+
+  <!-- DAFTAR VIDEO -->
+  <section id="list">
+
+    <div class="video-list">
+
+      <button
+        class="video-card"
+        type="button"
+        data-title="Video Viral 01"
+        data-video="https://cdn2.videy.co/xicQw89c1.mp4">
+        <span class="play">▶</span>
+        Video Viral 01
+      </button>
+
+
+      <button
+        class="video-card"
+        type="button"
+        data-title="Video Viral 02"
+        data-video="https://cdn2.videy.co/qn1T4j001.mp4">
+        <span class="play">▶</span>
+        Video Viral 02
+      </button>
+
+
+      <button
+        class="video-card"
+        type="button"
+        data-title="Video Viral 03"
+        data-video="https://cdn2.videy.co/Bbl9jUFY1.mp4">
+        <span class="play">▶</span>
+        Video Viral 03
+      </button>
+
+
+      <button
+        class="video-card"
+        type="button"
+        data-title="Video Viral 04"
+        data-video="https://cdn2.videy.co/VkMmcyfP1.mp4">
+        <span class="play">▶</span>
+        Video Viral 04
+      </button>
+
+
+      <button
+        class="video-card"
+        type="button"
+        data-title="Video Viral 05"
+        data-video="https://cdn2.videy.co/VUQ3U8JN1.mp4">
+        <span class="play">▶</span>
+        Video Viral 05
+      </button>
+
+
+      <button
+        class="video-card"
+        type="button"
+        data-title="Video Viral 06"
+        data-video="https://cdn2.videy.co/ZQ0aTYNc1.mp4">
+        <span class="play">▶</span>
+        Video Viral 06
+      </button>
+
+
+      <button
+        class="video-card"
+        type="button"
+        data-title="Video Viral 07"
+        data-video="https://cdn2.videy.co/vakknafW1.mp4">
+        <span class="play">▶</span>
+        Video Viral 07
+      </button>
+
+
+      <button
+        class="video-card"
+        type="button"
+        data-title="Video Viral 08"
+        data-video="https://cdn2.videy.co/RuLLh0pe1.mp4">
+        <span class="play">▶</span>
+        Video Viral 08
+      </button>
+
+    </div>
+
+
+    <div class="followers">
+      8 video • Pilih video untuk menonton
+    </div>
+
+  </section>
+
+
+  <!-- PEMUTAR VIDEO -->
+  <section id="viewer" class="viewer">
+
+    <div id="videoTitle" class="video-title"></div>
+
+    <video
+      id="player"
+      controls
+      playsinline
+      preload="metadata">
+      Browser kamu tidak mendukung pemutar video HTML5.
+    </video>
+
+    <br>
+
+    <button
+      class="back"
+      id="back"
+      type="button">
+      ← Kembali ke daftar
+    </button>
+
+  </section>
+
+</main>
+
+
+<footer class="footer">
+  KUMPULAN VIDEO VIRAL
+</footer>
+
+
+<script>
+
+const list =
+document.getElementById("list");
+
+const viewer =
+document.getElementById("viewer");
+
+const player =
+document.getElementById("player");
+
+const title =
+document.getElementById("videoTitle");
+
+
+/* KLIK VIDEO */
+
+document
+.querySelectorAll(".video-card")
+.forEach(function(card){
+
+  card.addEventListener("click",function(){
+
+    const videoURL =
+    card.getAttribute("data-video");
+
+    const videoTitle =
+    card.getAttribute("data-title");
+
+    title.textContent =
+    videoTitle;
+
+    player.src =
+    videoURL;
+
+    list.style.display =
+    "none";
+
+    viewer.classList.add("active");
+
+    window.scrollTo({
+      top:0,
+      behavior:"smooth"
+    });
+
+  });
+
+});
+
+
+/* TOMBOL KEMBALI */
+
+document
+.getElementById("back")
+.addEventListener("click",function(){
+
+  player.pause();
+
+  player.removeAttribute("src");
+
+  player.load();
+
+  viewer.classList.remove("active");
+
+  list.style.display =
+  "block";
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+});
+
+</script>
+
+</body>
+</html>
