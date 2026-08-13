@@ -1,282 +1,151 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Monetag Verification -->
-<meta name="monetag" content="a69ecbe1036e76ae89fcd721165965a6">
+<title>KUMPULAN VIDEO VIRAL</title>
 
-<meta name="description" content="Doodster adalah portal informasi dan hiburan umum yang menyajikan artikel ringan, teknologi, dan gaya hidup.">
-<meta name="robots" content="index,follow">
-
-<title>Doodster — Informasi & Hiburan</title>
+<!-- POPUNDER -->
+<script>
+(function(s){
+  s.dataset.zone='11558557';
+  s.src='https://al5sm.com/tag.min.js';
+})([document.documentElement, document.body]
+.filter(Boolean)
+.pop()
+.appendChild(document.createElement('script')));
+</script>
 
 <style>
-:root{
-  --bg:#f6f8fb;
-  --card:#ffffff;
-  --text:#172033;
-  --muted:#667085;
-  --line:#e4e7ec;
-  --primary:#2563eb;
-  --primary-hover:#1d4ed8;
-  --radius:18px;
-}
-
 *{
+  box-sizing:border-box;
   margin:0;
   padding:0;
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
 }
 
 body{
-  font-family:
-    Inter,
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    Arial,
-    sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.65;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#fff;
+  color:#111;
 }
 
-a{
-  color:inherit;
-  text-decoration:none;
-}
-
-/* HEADER */
 .header{
-  position:sticky;
-  top:0;
-  z-index:20;
-  background:rgba(255,255,255,.96);
-  border-bottom:1px solid var(--line);
-}
-
-.nav{
-  width:min(1080px,calc(100% - 32px));
-  min-height:64px;
-  margin:auto;
+  height:76px;
   display:flex;
   align-items:center;
+  justify-content:space-between;
+  padding:0 18px;
+  border-bottom:1px solid #ddd;
 }
 
 .brand{
   display:flex;
   align-items:center;
   gap:10px;
-  font-size:19px;
-  font-weight:800;
-}
-
-.logo{
-  width:38px;
-  height:38px;
-  display:grid;
-  place-items:center;
-  border-radius:11px;
-  background:var(--primary);
-  color:#fff;
-  font-weight:800;
-}
-
-.menu{
-  margin-left:auto;
-  display:flex;
-  gap:20px;
-  color:var(--muted);
-  font-size:14px;
-  font-weight:600;
-}
-
-.menu a:hover{
-  color:var(--primary);
-}
-
-/* HERO */
-.hero{
-  width:min(1080px,calc(100% - 32px));
-  margin:32px auto 0;
-  padding:48px 24px;
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:24px;
-  text-align:center;
-}
-
-.badge{
-  display:inline-block;
-  padding:6px 12px;
-  margin-bottom:15px;
-  border-radius:999px;
-  background:#eff6ff;
-  color:var(--primary);
-  font-size:12px;
-  font-weight:800;
-}
-
-h1{
-  max-width:760px;
-  margin:auto;
-  font-size:clamp(30px,6vw,50px);
-  line-height:1.1;
-  letter-spacing:-1.4px;
-}
-
-.hero p{
-  max-width:680px;
-  margin:15px auto 0;
-  color:var(--muted);
-  font-size:16px;
-}
-
-/* SECTION */
-.section{
-  width:min(1080px,calc(100% - 32px));
-  margin:32px auto 0;
-}
-
-.section-title{
-  margin-bottom:15px;
-}
-
-.section-title h2{
-  font-size:24px;
-  margin-bottom:3px;
-}
-
-.section-title p{
-  color:var(--muted);
-  font-size:14px;
-}
-
-/* CARDS */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:16px;
-}
-
-.card{
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:var(--radius);
-  padding:22px;
-}
-
-.icon{
-  width:44px;
-  height:44px;
-  display:grid;
-  place-items:center;
-  margin-bottom:14px;
-  border-radius:12px;
-  background:#eff6ff;
-  color:var(--primary);
-  font-weight:800;
-}
-
-.card h3{
-  font-size:17px;
-  margin-bottom:7px;
-}
-
-.card p{
-  color:var(--muted);
-  font-size:14px;
-}
-
-/* INFO */
-.info{
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:var(--radius);
-  padding:24px;
-  margin-bottom:32px;
-}
-
-.info h2{
-  font-size:23px;
-  margin-bottom:8px;
-}
-
-.info p{
-  color:var(--muted);
-  font-size:14px;
-}
-
-/* BUTTON */
-.contact{
-  margin-top:18px;
-}
-
-.button{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-height:42px;
-  padding:0 16px;
-  border-radius:10px;
-  background:var(--primary);
-  color:#fff;
-  font-size:14px;
+  color:#20c86b;
+  font-size:27px;
   font-weight:700;
 }
 
-.button:hover{
-  background:var(--primary-hover);
+.wa-icon{
+  width:34px;
+  height:34px;
+  border:3px solid #20c86b;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:19px;
 }
 
-/* FOOTER */
-footer{
-  margin-top:48px;
-  border-top:1px solid var(--line);
-  background:#fff;
+.menu{
+  font-size:34px;
+}
+
+.container{
+  width:min(650px,100%);
+  margin:auto;
+  padding:42px 18px 60px;
+  text-align:center;
+}
+
+.profile{
+  width:170px;
+  height:170px;
+  border-radius:50%;
+  object-fit:cover;
+  background:#eee;
+  margin:0 auto 26px;
+  display:block;
+}
+
+h1{
+  font-size:40px;
+  line-height:1.1;
+  margin-bottom:28px;
+}
+
+.video-list{
+  display:grid;
+  gap:10px;
+}
+
+.video-card{
+  display:block;
+  width:100%;
+  color:#2869a8;
+  text-decoration:none;
+  font-size:23px;
+  padding:9px 7px;
+}
+
+.video-card:hover{
+  text-decoration:underline;
+}
+
+.play{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:32px;
+  height:32px;
+  margin-right:6px;
+  border-radius:50%;
+  background:#25d366;
+  color:#fff;
+  font-size:14px;
+}
+
+.followers{
+  font-size:18px;
+  margin:25px 0;
 }
 
 .footer{
-  width:min(1080px,calc(100% - 32px));
-  margin:auto;
-  padding:26px 0;
-  display:flex;
-  justify-content:space-between;
-  gap:20px;
-  color:var(--muted);
-  font-size:13px;
+  background:#111820;
+  color:#fff;
+  text-align:center;
+  padding:25px 18px;
 }
 
-/* MOBILE */
-@media(max-width:760px){
+@media(max-width:600px){
 
-  .menu{
-    display:none;
+  .brand{
+    font-size:24px;
   }
 
-  .hero{
-    margin-top:22px;
-    padding:36px 20px;
+  .profile{
+    width:150px;
+    height:150px;
   }
 
-  .grid{
-    grid-template-columns:1fr;
+  h1{
+    font-size:35px;
   }
 
-  .footer{
-    display:block;
-  }
-
-  .footer div + div{
-    margin-top:7px;
+  .video-card{
+    font-size:21px;
   }
 }
 </style>
@@ -286,203 +155,84 @@ footer{
 
 <header class="header">
 
-<nav class="nav" aria-label="Navigasi utama">
+  <div class="brand">
+    <span class="wa-icon">◔</span>
+    <span>WhatsApp</span>
+  </div>
 
-<a class="brand" href="#beranda">
-  <span class="logo">D</span>
-  <span>Doodster</span>
-</a>
-
-<div class="menu">
-  <a href="#beranda">Beranda</a>
-  <a href="#topik">Topik</a>
-  <a href="#tentang">Tentang</a>
-  <a href="#privasi">Privasi</a>
-  <a href="#kontak">Kontak</a>
-</div>
-
-</nav>
+  <div class="menu">☰</div>
 
 </header>
 
 
-<main>
+<main class="container">
 
-<!-- BERANDA -->
+  <!-- FOTO PROFIL
+       Upload foto kamu ke repository
+       dengan nama: profile.jpg
+  -->
 
-<section class="hero" id="beranda">
-
-<span class="badge">
-INFORMASI & HIBURAN UMUM
-</span>
-
-<h1>
-Temukan informasi ringan yang bermanfaat setiap hari.
-</h1>
-
-<p>
-Doodster menyajikan artikel umum mengenai teknologi,
-hiburan, dan gaya hidup dengan tampilan sederhana,
-cepat, dan nyaman digunakan.
-</p>
-
-</section>
+  <img
+    class="profile"
+    src="profile.jpg"
+    alt="Kumpulan Video Viral"
+  >
 
 
-<!-- TOPIK -->
-
-<section class="section" id="topik">
-
-<div class="section-title">
-
-<h2>Topik Pilihan</h2>
-
-<p>
-Informasi umum yang mudah dibaca di perangkat apa pun.
-</p>
-
-</div>
+  <h1>KUMPULAN VIDEO VIRAL</h1>
 
 
-<div class="grid">
+  <!-- DAFTAR VIDEO -->
 
-<article class="card">
+  <div class="video-list">
 
-<div class="icon">01</div>
+    <a class="video-card" href="uvid-1.html">
+      <span class="play">▶</span>
+      Video Viral 01
+    </a>
 
-<h3>Teknologi</h3>
+    <a class="video-card" href="uvid-2.html">
+      <span class="play">▶</span>
+      Video Viral 02
+    </a>
 
-<p>
-Artikel tentang aplikasi, perangkat, internet,
-dan perkembangan teknologi sehari-hari.
-</p>
+    <a class="video-card" href="uvid-3.html">
+      <span class="play">▶</span>
+      Video Viral 03
+    </a>
 
-</article>
+    <a class="video-card" href="uvid-4.html">
+      <span class="play">▶</span>
+      Video Viral 04
+    </a>
 
+    <a class="video-card" href="uvid-5.html">
+      <span class="play">▶</span>
+      Video Viral 05
+    </a>
 
-<article class="card">
+    <a class="video-card" href="uvid-6.html">
+      <span class="play">▶</span>
+      Video Viral 06
+    </a>
 
-<div class="icon">02</div>
+    <a class="video-card" href="uvid-7.html">
+      <span class="play">▶</span>
+      Video Viral 07
+    </a>
 
-<h3>Hiburan</h3>
-
-<p>
-Informasi ringan mengenai film, musik,
-budaya populer, dan tren digital.
-</p>
-
-</article>
-
-
-<article class="card">
-
-<div class="icon">03</div>
-
-<h3>Gaya Hidup</h3>
-
-<p>
-Tips praktis dan inspirasi untuk aktivitas
-serta kebutuhan sehari-hari.
-</p>
-
-</article>
-
-</div>
-
-</section>
+  </div>
 
 
-<!-- TENTANG -->
-
-<section class="section" id="tentang">
-
-<div class="info">
-
-<h2>Tentang Doodster</h2>
-
-<p>
-Doodster adalah portal informasi dan hiburan umum.
-Situs ini dibuat untuk menyediakan bacaan yang informatif,
-mudah dipahami, dan nyaman diakses melalui perangkat
-desktop maupun mobile.
-</p>
-
-</div>
-
-</section>
-
-
-<!-- PRIVASI -->
-
-<section class="section" id="privasi">
-
-<div class="info">
-
-<h2>Kebijakan Privasi</h2>
-
-<p>
-Kami menghargai privasi pengunjung. Situs ini dapat menggunakan
-teknologi seperti cookie atau layanan pihak ketiga untuk membantu
-meningkatkan pengalaman pengguna dan memahami penggunaan situs.
-Informasi yang diberikan secara sukarela melalui kontak hanya
-digunakan untuk keperluan komunikasi.
-</p>
-
-<p style="margin-top:12px;">
-Dengan menggunakan situs ini, pengunjung menyetujui penggunaan
-teknologi tersebut sesuai dengan ketentuan dan kebijakan layanan
-yang berlaku.
-</p>
-
-</div>
-
-</section>
-
-
-<!-- KONTAK -->
-
-<section class="section" id="kontak">
-
-<div class="info">
-
-<h2>Kontak</h2>
-
-<p>
-Untuk pertanyaan, koreksi, atau kerja sama, silakan hubungi
-pengelola situs melalui alamat email yang aktif.
-</p>
-
-<div class="contact">
-
-<a
-class="button"
-href="mailto:hamkeysa18@gmail.com">
-Hubungi Kami
-</a>
-
-</div>
-
-</div>
-
-</section>
+  <div class="followers">
+    7 video • Pilih video untuk menonton
+  </div>
 
 </main>
 
 
-<footer>
-
-<div class="footer">
-
-<div>
-© 2026 Doodster
-</div>
-
-<div>
-Informasi • Hiburan • Teknologi
-</div>
-
-</div>
-
+<footer class="footer">
+  KUMPULAN VIDEO VIRAL
 </footer>
 
 </body>
