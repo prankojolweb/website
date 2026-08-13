@@ -81,12 +81,14 @@ h1{
 
 .video-card{
   width:100%;
+  display:block;
   border:0;
   background:transparent;
   color:#2869a8;
   font-size:23px;
   padding:7px;
   cursor:pointer;
+  text-decoration:none;
 }
 
 .video-card:hover{
@@ -109,38 +111,6 @@ h1{
 .followers{
   font-size:18px;
   margin:25px 0;
-}
-
-.viewer{
-  display:none;
-  margin-top:28px;
-}
-
-.viewer.active{
-  display:block;
-}
-
-.viewer video{
-  width:100%;
-  max-height:70vh;
-  border-radius:14px;
-  background:#000;
-  display:block;
-}
-
-.video-title{
-  font-size:22px;
-  font-weight:700;
-  margin:16px 0;
-}
-
-.back{
-  border:0;
-  background:#f1f1f1;
-  padding:13px 22px;
-  border-radius:30px;
-  font-size:17px;
-  cursor:pointer;
 }
 
 .footer{
@@ -189,10 +159,10 @@ h1{
 <main class="container">
 
   <!-- FOTO PROFIL -->
-  <!-- Ganti URL di bawah dengan foto kamu -->
+  <!-- Pastikan profil.jpg ada di folder yang sama -->
   <img
     class="profile"
-    src="https://photos.app.goo.gl/TqpqPTUXwqcNHF74A"
+    src="./profil.jpg"
     alt="Kumpulan Video Viral"
   >
 
@@ -200,121 +170,73 @@ h1{
   <h1>KUMPULAN VIDEO VIRAL</h1>
 
 
-  <!-- DAFTAR VIDEO -->
-  <section id="list">
+  <section>
 
     <div class="video-list">
 
-      <button
+
+      <a
         class="video-card"
-        type="button"
-        data-title="Video Viral 01"
-        data-video="https://cdn2.videy.co/xicQw89c1.mp4">
+        href="https://prankojolweb.github.io/webhub/uvid-1">
         <span class="play">▶</span>
         Video Viral 01
-      </button>
+      </a>
 
 
-      <button
+      <a
         class="video-card"
-        type="button"
-        data-title="Video Viral 02"
-        data-video="https://cdn2.videy.co/qn1T4j001.mp4">
+        href="https://prankojolweb.github.io/webhub/uvid-2">
         <span class="play">▶</span>
         Video Viral 02
-      </button>
+      </a>
 
 
-      <button
+      <a
         class="video-card"
-        type="button"
-        data-title="Video Viral 03"
-        data-video="https://cdn2.videy.co/Bbl9jUFY1.mp4">
+        href="https://prankojolweb.github.io/webhub/uvid-3">
         <span class="play">▶</span>
         Video Viral 03
-      </button>
+      </a>
 
 
-      <button
+      <a
         class="video-card"
-        type="button"
-        data-title="Video Viral 04"
-        data-video="https://cdn2.videy.co/VkMmcyfP1.mp4">
+        href="https://prankojolweb.github.io/webhub/uvid-4">
         <span class="play">▶</span>
         Video Viral 04
-      </button>
+      </a>
 
 
-      <button
+      <a
         class="video-card"
-        type="button"
-        data-title="Video Viral 05"
-        data-video="https://cdn2.videy.co/VUQ3U8JN1.mp4">
+        href="https://prankojolweb.github.io/webhub/uvid-5">
         <span class="play">▶</span>
         Video Viral 05
-      </button>
+      </a>
 
 
-      <button
+      <a
         class="video-card"
-        type="button"
-        data-title="Video Viral 06"
-        data-video="https://cdn2.videy.co/ZQ0aTYNc1.mp4">
+        href="https://prankojolweb.github.io/webhub/uvid-6">
         <span class="play">▶</span>
         Video Viral 06
-      </button>
+      </a>
 
 
-      <button
+      <a
         class="video-card"
-        type="button"
-        data-title="Video Viral 07"
-        data-video="https://cdn2.videy.co/vakknafW1.mp4">
+        href="https://prankojolweb.github.io/webhub/uvid-7">
         <span class="play">▶</span>
         Video Viral 07
-      </button>
+      </a>
 
-
-      <button
-        class="video-card"
-        type="button"
-        data-title="Video Viral 08"
-        data-video="https://cdn2.videy.co/RuLLh0pe1.mp4">
-        <span class="play">▶</span>
-        Video Viral 08
-      </button>
 
     </div>
 
 
     <div class="followers">
-      8 video • Pilih video untuk menonton
+      7 video • Pilih video untuk menonton
     </div>
-
-  </section>
-
-
-  <!-- PEMUTAR VIDEO -->
-  <section id="viewer" class="viewer">
-
-    <div id="videoTitle" class="video-title"></div>
-
-    <video
-      id="player"
-      controls
-      playsinline
-      preload="metadata">
-      Browser kamu tidak mendukung pemutar video HTML5.
-    </video>
-
-    <br>
-
-    <button
-      class="back"
-      id="back"
-      type="button">
-      ← Kembali ke daftar
-    </button>
 
   </section>
 
@@ -324,83 +246,6 @@ h1{
 <footer class="footer">
   KUMPULAN VIDEO VIRAL
 </footer>
-
-
-<script>
-
-const list =
-document.getElementById("list");
-
-const viewer =
-document.getElementById("viewer");
-
-const player =
-document.getElementById("player");
-
-const title =
-document.getElementById("videoTitle");
-
-
-/* KLIK VIDEO */
-
-document
-.querySelectorAll(".video-card")
-.forEach(function(card){
-
-  card.addEventListener("click",function(){
-
-    const videoURL =
-    card.getAttribute("data-video");
-
-    const videoTitle =
-    card.getAttribute("data-title");
-
-    title.textContent =
-    videoTitle;
-
-    player.src =
-    videoURL;
-
-    list.style.display =
-    "none";
-
-    viewer.classList.add("active");
-
-    window.scrollTo({
-      top:0,
-      behavior:"smooth"
-    });
-
-  });
-
-});
-
-
-/* TOMBOL KEMBALI */
-
-document
-.getElementById("back")
-.addEventListener("click",function(){
-
-  player.pause();
-
-  player.removeAttribute("src");
-
-  player.load();
-
-  viewer.classList.remove("active");
-
-  list.style.display =
-  "block";
-
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
-
-});
-
-</script>
 
 </body>
 </html>
