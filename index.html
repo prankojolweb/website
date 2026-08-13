@@ -6,17 +6,6 @@
 
 <title>KUMPULAN VIDEO VIRAL</title>
 
-<!-- POPUNDER -->
-<script>
-(function(s){
-  s.dataset.zone='11558557';
-  s.src='https://al5sm.com/tag.min.js';
-})([document.documentElement, document.body]
-.filter(Boolean)
-.pop()
-.appendChild(document.createElement('script')));
-</script>
-
 <style>
 *{
   box-sizing:border-box;
@@ -92,12 +81,13 @@ h1{
 }
 
 .video-card{
-  display:block;
   width:100%;
+  border:0;
+  background:transparent;
   color:#2869a8;
-  text-decoration:none;
   font-size:23px;
-  padding:9px 7px;
+  padding:7px;
+  cursor:pointer;
 }
 
 .video-card:hover{
@@ -120,6 +110,40 @@ h1{
 .followers{
   font-size:18px;
   margin:25px 0;
+}
+
+.viewer{
+  display:none;
+  margin-top:28px;
+}
+
+.viewer.active{
+  display:block;
+}
+
+.viewer iframe{
+  width:100%;
+  height:70vh;
+  min-height:500px;
+  border:0;
+  border-radius:14px;
+  background:#000;
+}
+
+.video-title{
+  font-size:22px;
+  font-weight:700;
+  margin:16px 0;
+}
+
+.back{
+  border:0;
+  background:#f1f1f1;
+  padding:13px 22px;
+  border-radius:30px;
+  font-size:17px;
+  cursor:pointer;
+  margin-top:15px;
 }
 
 .footer{
@@ -147,6 +171,11 @@ h1{
   .video-card{
     font-size:21px;
   }
+
+  .viewer iframe{
+    height:65vh;
+    min-height:450px;
+  }
 }
 </style>
 </head>
@@ -167,66 +196,124 @@ h1{
 
 <main class="container">
 
-  <!-- FOTO PROFIL
-       Upload foto kamu ke repository
-       dengan nama: profile.jpg
-  -->
-
+  <!-- FOTO PROFIL -->
   <img
     class="profile"
-    src="profile.jpg"
+    src="profil.jpg"
     alt="Kumpulan Video Viral"
   >
-
 
   <h1>KUMPULAN VIDEO VIRAL</h1>
 
 
   <!-- DAFTAR VIDEO -->
 
-  <div class="video-list">
+  <section id="list">
 
-    <a class="video-card" href="uvid-1.html">
-      <span class="play">▶</span>
-      Video Viral 01
-    </a>
+    <div class="video-list">
 
-    <a class="video-card" href="uvid-2.html">
-      <span class="play">▶</span>
-      Video Viral 02
-    </a>
-
-    <a class="video-card" href="uvid-3.html">
-      <span class="play">▶</span>
-      Video Viral 03
-    </a>
-
-    <a class="video-card" href="uvid-4.html">
-      <span class="play">▶</span>
-      Video Viral 04
-    </a>
-
-    <a class="video-card" href="uvid-5.html">
-      <span class="play">▶</span>
-      Video Viral 05
-    </a>
-
-    <a class="video-card" href="uvid-6.html">
-      <span class="play">▶</span>
-      Video Viral 06
-    </a>
-
-    <a class="video-card" href="uvid-7.html">
-      <span class="play">▶</span>
-      Video Viral 07
-    </a>
-
-  </div>
+      <button
+        class="video-card"
+        type="button"
+        data-title="Video Viral 01"
+        data-video="https://prankojolweb.github.io/webhub/uvid-1">
+        <span class="play">▶</span>
+        Video Viral 01
+      </button>
 
 
-  <div class="followers">
-    7 video • Pilih video untuk menonton
-  </div>
+      <button
+        class="video-card"
+        type="button"
+        data-title="Video Viral 02"
+        data-video="https://prankojolweb.github.io/webhub/uvid-2">
+        <span class="play">▶</span>
+        Video Viral 02
+      </button>
+
+
+      <button
+        class="video-card"
+        type="button"
+        data-title="Video Viral 03"
+        data-video="https://prankojolweb.github.io/webhub/uvid-3">
+        <span class="play">▶</span>
+        Video Viral 03
+      </button>
+
+
+      <button
+        class="video-card"
+        type="button"
+        data-title="Video Viral 04"
+        data-video="https://prankojolweb.github.io/webhub/uvid-4">
+        <span class="play">▶</span>
+        Video Viral 04
+      </button>
+
+
+      <button
+        class="video-card"
+        type="button"
+        data-title="Video Viral 05"
+        data-video="https://prankojolweb.github.io/webhub/uvid-5">
+        <span class="play">▶</span>
+        Video Viral 05
+      </button>
+
+
+      <button
+        class="video-card"
+        type="button"
+        data-title="Video Viral 06"
+        data-video="https://prankojolweb.github.io/webhub/uvid-6">
+        <span class="play">▶</span>
+        Video Viral 06
+      </button>
+
+
+      <button
+        class="video-card"
+        type="button"
+        data-title="Video Viral 07"
+        data-video="https://prankojolweb.github.io/webhub/uvid-7">
+        <span class="play">▶</span>
+        Video Viral 07
+      </button>
+
+    </div>
+
+
+    <div class="followers">
+      7 video • Pilih video untuk menonton
+    </div>
+
+  </section>
+
+
+  <!-- PEMUTAR VIDEO / HALAMAN UVID -->
+
+  <section id="viewer" class="viewer">
+
+    <div id="videoTitle" class="video-title"></div>
+
+    <iframe
+      id="player"
+      src=""
+      allow="autoplay; fullscreen"
+      allowfullscreen>
+    </iframe>
+
+    <br>
+
+    <button
+      class="back"
+      id="back"
+      type="button">
+      ← Kembali ke daftar
+    </button>
+
+  </section>
 
 </main>
 
@@ -234,6 +321,75 @@ h1{
 <footer class="footer">
   KUMPULAN VIDEO VIRAL
 </footer>
+
+
+<script>
+
+const list = document.getElementById("list");
+
+const viewer = document.getElementById("viewer");
+
+const player = document.getElementById("player");
+
+const title = document.getElementById("videoTitle");
+
+
+/* KLIK VIDEO */
+
+document
+.querySelectorAll(".video-card")
+.forEach(function(card){
+
+  card.addEventListener("click",function(){
+
+    const videoURL =
+    card.getAttribute("data-video");
+
+    const videoTitle =
+    card.getAttribute("data-title");
+
+    title.textContent =
+    videoTitle;
+
+    player.src =
+    videoURL;
+
+    list.style.display =
+    "none";
+
+    viewer.classList.add("active");
+
+    window.scrollTo({
+      top:0,
+      behavior:"smooth"
+    });
+
+  });
+
+});
+
+
+/* TOMBOL KEMBALI */
+
+document
+.getElementById("back")
+.addEventListener("click",function(){
+
+  player.src = "";
+
+  viewer.classList.remove("active");
+
+  list.style.display =
+  "block";
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+});
+
+</script>
 
 </body>
 </html>
