@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="id">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<title>PRANKOJOL</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+  rel="stylesheet">
+
+
+<!-- =========================
+     ADCASH AUTOTAG
+     ========================= -->
+
+<script
+  id="aclib"
+  type="text/javascript"
+  src="//acscdn.com/script/aclib.js">
+</script>
+
+<script type="text/javascript">
+  aclib.runAutoTag({
+    zoneId: 'ebg8ziu4fx'
+  });
+</script>
+
+
+<style>
+
+:root{
+  --bg:#ffffff;
+  --text:#0f172a;
+  --muted:#64748b;
+  --line:#e2e8f0;
+  --btn:#111827;
+  --danger:#dc2626;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  -webkit-text-size-adjust:100%;
+}
+
+html,
+body{
+  min-height:100%;
+}
+
+body{
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Ubuntu,
+    sans-serif;
+
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+}
+
+
+/* =========================
+   AGE GATE
+   ========================= */
+
+.age-gate{
+  position:fixed;
+  inset:0;
+  z-index:9999;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:20px;
+
+  background:rgba(15,23,42,.88);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+}
+
+.age-box{
+  width:min(100%,390px);
+
+  background:#fff;
+
+  border-radius:20px;
+
+  padding:28px 22px;
+
+  text-align:center;
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,.25);
+}
+
+.age-icon{
+  width:58px;
+  height:58px;
+
+  margin:0 auto 16px;
+
+  display:grid;
+  place-items:center;
+
+  border-radius:50%;
+
+  background:#111827;
+  color:#fff;
+
+  font-size:22px;
+  font-weight:700;
+}
+
+.age-box h1{
+  font-size:22px;
+  line-height:1.25;
+
+  margin-bottom:10px;
+}
+
+.age-box p{
+  color:var(--muted);
+
+  font-size:14px;
+  line-height:1.6;
+
+  margin-bottom:22px;
+}
+
+.age-buttons{
+  display:grid;
+  gap:10px;
+}
+
+.age-btn{
+  width:100%;
+
+  border:0;
+
+  padding:13px 16px;
+
+  border-radius:12px;
+
+  font-family:inherit;
+  font-size:14px;
+  font-weight:700;
+
+  cursor:pointer;
+}
+
+.age-yes{
+  background:#111827;
+  color:#fff;
+}
+
+.age-no{
+  background:#f1f5f9;
+  color:#334155;
+}
+
+.age-note{
+  margin-top:15px;
+
+  font-size:11px !important;
+  color:#94a3b8 !important;
+
+  line-height:1.5 !important;
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+.appbar{
+  position:sticky;
+  top:0;
+  z-index:20;
+
+  background:#fff;
+  border-bottom:1px solid var(--line);
+}
+
+.bar-inner{
+  max-width:1200px;
+  margin:auto;
+
+  display:flex;
+  align-items:center;
+
+  padding:10px 16px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:8px;
+
+  font-weight:700;
+}
+
+.logo{
+  width:28px;
+  height:28px;
+
+  display:grid;
+  place-items:center;
+
+  background:#111827;
+  color:#fff;
+
+  border-radius:6px;
+}
+
+.spacer{
+  flex:1;
+}
+
+.btn{
+  border:0;
+
+  padding:10px 14px;
+
+  border-radius:12px;
+
+  background:var(--btn);
+  color:#fff;
+
+  font-weight:600;
+
+  cursor:pointer;
+}
+
+
+/* =========================
+   ADVERTISEMENT
+   ========================= */
+
+.banner{
+  max-width:1200px;
+  margin:10px auto;
+
+  padding:8px 16px;
+
+  color:var(--muted);
+
+  font-size:13px;
+}
+
+
+/* =========================
+   CONTENT
+   ========================= */
+
+.wrap{
+  max-width:1200px;
+  margin:auto;
+
+  padding:16px;
+}
+
+.player-shell{
+  display:grid;
+  place-items:center;
+}
+
+.phone{
+  width:clamp(240px,92vw,420px);
+
+  aspect-ratio:9 / 16;
+
+  border-radius:22px;
+
+  overflow:hidden;
+
+  background:#000;
+}
+
+.phone video{
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+}
+
+.meta{
+  margin-top:20px;
+
+  text-align:center;
+
+  color:var(--muted);
+
+  font-size:13px;
+}
+
+
+/* =========================
+   LOCKED VIDEO
+   ========================= */
+
+.video-locked{
+  position:relative;
+}
+
+.video-locked video{
+  opacity:.35;
+  pointer-events:none;
+}
+
+.video-locked::after{
+  content:"18+ • Konfirmasi usia untuk menonton";
+
+  position:absolute;
+  inset:0;
+
+  display:grid;
+  place-items:center;
+
+  padding:20px;
+
+  text-align:center;
+
+  color:#fff;
+  font-size:14px;
+  font-weight:600;
+
+  background:rgba(0,0,0,.35);
+  pointer-events:none;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     AGE VERIFICATION
+     ========================= -->
+
+<div
+  class="age-gate"
+  id="ageGate"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="ageTitle">
+
+  <div class="age-box">
+
+    <div class="age-icon">
+      18+
+    </div>
+
+    <h1 id="ageTitle">
+      Konfirmasi Usia
+    </h1>
+
+    <p>
+      Konten pada halaman ini diperuntukkan
+      bagi pengguna berusia 18 tahun atau lebih.
+      Silakan konfirmasi usia kamu untuk melanjutkan.
+    </p>
+
+    <div class="age-buttons">
+
+      <button
+        class="age-btn age-yes"
+        id="age
