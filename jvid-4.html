@@ -1,0 +1,748 @@
+<!doctype html>
+<html lang="id">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<title>PRANKOJOL</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+  rel="stylesheet">
+
+
+<style>
+
+:root{
+  --bg:#ffffff;
+  --text:#0f172a;
+  --muted:#64748b;
+  --line:#e2e8f0;
+  --btn:#111827;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  -webkit-text-size-adjust:100%;
+}
+
+html,
+body{
+  min-height:100%;
+}
+
+body{
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Ubuntu,
+    sans-serif;
+
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+}
+
+
+/* =========================
+   AGE GATE
+   ========================= */
+
+.age-gate{
+  position:fixed;
+  inset:0;
+  z-index:99999;
+
+  width:100%;
+  height:100%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:
+    max(16px, env(safe-area-inset-top))
+    16px
+    max(16px, env(safe-area-inset-bottom));
+
+  background:rgba(15,23,42,.94);
+
+  overflow-y:auto;
+
+  -webkit-overflow-scrolling:touch;
+}
+
+.age-box{
+  width:100%;
+  max-width:390px;
+
+  max-height:calc(100vh - 32px);
+
+  overflow-y:auto;
+
+  background:#fff;
+
+  border-radius:24px;
+
+  padding:26px 20px 22px;
+
+  text-align:center;
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,.30);
+
+  flex-shrink:0;
+}
+
+.age-icon{
+  width:68px;
+  height:68px;
+
+  margin:0 auto 16px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:50%;
+
+  background:#111827;
+  color:#fff;
+
+  font-size:21px;
+  font-weight:700;
+}
+
+.age-box h1{
+  font-size:24px;
+  line-height:1.25;
+
+  margin-bottom:10px;
+}
+
+.age-box p{
+  color:var(--muted);
+
+  font-size:14px;
+  line-height:1.65;
+
+  margin-bottom:20px;
+}
+
+.age-buttons{
+  display:grid;
+  gap:10px;
+
+  width:100%;
+}
+
+.age-btn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  width:100%;
+  min-height:48px;
+
+  border:0;
+  border-radius:12px;
+
+  padding:13px 16px;
+
+  font-family:inherit;
+  font-size:14px;
+  font-weight:700;
+
+  cursor:pointer;
+
+  -webkit-tap-highlight-color:transparent;
+}
+
+.age-yes{
+  background:#111827;
+  color:#fff;
+}
+
+.age-yes:active{
+  transform:scale(.98);
+}
+
+.age-no{
+  background:#e2e8f0;
+  color:#334155;
+}
+
+.age-no:active{
+  transform:scale(.98);
+}
+
+.age-note{
+  margin-top:14px !important;
+  margin-bottom:0 !important;
+
+  color:#94a3b8 !important;
+
+  font-size:11px !important;
+  line-height:1.5 !important;
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+.appbar{
+  position:sticky;
+  top:0;
+  z-index:20;
+
+  background:#fff;
+  border-bottom:1px solid var(--line);
+}
+
+.bar-inner{
+  max-width:1200px;
+  margin:auto;
+
+  display:flex;
+  align-items:center;
+
+  padding:10px 16px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:8px;
+
+  font-weight:700;
+}
+
+.logo{
+  width:28px;
+  height:28px;
+
+  display:grid;
+  place-items:center;
+
+  background:#111827;
+  color:#fff;
+
+  border-radius:6px;
+}
+
+.spacer{
+  flex:1;
+}
+
+.btn{
+  border:0;
+
+  padding:10px 14px;
+
+  border-radius:12px;
+
+  background:var(--btn);
+  color:#fff;
+
+  font-family:inherit;
+  font-weight:600;
+
+  cursor:pointer;
+}
+
+
+/* =========================
+   ADVERTISEMENT
+   ========================= */
+
+.banner{
+  max-width:1200px;
+  margin:10px auto;
+
+  padding:8px 16px;
+
+  color:var(--muted);
+
+  font-size:13px;
+}
+
+
+/* =========================
+   CONTENT
+   ========================= */
+
+.wrap{
+  max-width:1200px;
+  margin:auto;
+
+  padding:16px;
+}
+
+.player-shell{
+  display:grid;
+  place-items:center;
+}
+
+.phone{
+  position:relative;
+
+  width:clamp(240px,92vw,420px);
+
+  aspect-ratio:9 / 16;
+
+  border-radius:22px;
+
+  overflow:hidden;
+
+  background:#000;
+}
+
+.phone video{
+  display:block;
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  background:#000;
+}
+
+.meta{
+  margin-top:20px;
+
+  text-align:center;
+
+  color:var(--muted);
+
+  font-size:13px;
+}
+
+
+/* =========================
+   LOCK SCREEN VIDEO
+   ========================= */
+
+.video-locked video{
+  pointer-events:none;
+}
+
+.video-lock-message{
+  position:absolute;
+  inset:0;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:20px;
+
+  background:rgba(0,0,0,.35);
+
+  color:#fff;
+
+  text-align:center;
+
+  font-size:14px;
+  font-weight:600;
+
+  pointer-events:none;
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media(max-height:650px){
+
+  .age-box{
+    padding:20px 18px 18px;
+  }
+
+  .age-icon{
+    width:54px;
+    height:54px;
+
+    margin-bottom:10px;
+  }
+
+  .age-box h1{
+    font-size:21px;
+  }
+
+  .age-box p{
+    margin-bottom:14px;
+  }
+
+  .age-btn{
+    min-height:44px;
+    padding:10px 14px;
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     AGE VERIFICATION
+     ========================= -->
+
+<div
+  class="age-gate"
+  id="ageGate"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="ageTitle">
+
+  <div class="age-box">
+
+    <div class="age-icon">
+      18+
+    </div>
+
+    <h1 id="ageTitle">
+      Konfirmasi Usia
+    </h1>
+
+    <p>
+      Konten pada halaman ini diperuntukkan
+      bagi pengguna berusia 18 tahun atau lebih.
+      Silakan konfirmasi usia kamu untuk melanjutkan.
+    </p>
+
+    <div class="age-buttons">
+
+      <button
+        type="button"
+        class="age-btn age-yes"
+        id="ageYes">
+
+        Saya 18+ — Lanjutkan
+
+      </button>
+
+      <button
+        type="button"
+        class="age-btn age-no"
+        id="ageNo">
+
+        Saya di bawah 18 tahun
+
+      </button>
+
+    </div>
+
+    <p class="age-note">
+      Dengan melanjutkan, kamu mengonfirmasi bahwa
+      kamu telah memenuhi batas usia yang berlaku.
+    </p>
+
+  </div>
+
+</div>
+
+
+<!-- =========================
+     HEADER
+     ========================= -->
+
+<header class="appbar">
+
+  <div class="bar-inner">
+
+    <div class="brand">
+
+      <span class="logo">
+        V
+      </span>
+
+      <span>
+        vldey<span style="color:#3b82f6">.co</span>
+      </span>
+
+    </div>
+
+    <div class="spacer"></div>
+
+    <button
+      class="btn"
+      type="button">
+
+      Upload
+
+    </button>
+
+  </div>
+
+</header>
+
+
+<!-- =========================
+     ADVERTISEMENT
+     ========================= -->
+
+<div class="banner">
+  Advertise
+</div>
+
+
+<!-- =========================
+     VIDEO
+     ========================= -->
+
+<main class="wrap">
+
+  <section class="player-shell">
+
+    <div
+      class="phone video-locked"
+      id="videoContainer">
+
+      <video
+        id="video"
+        playsinline
+        controls
+        preload="metadata">
+
+        <source
+          src="VIDEO"
+          type="video/mp4">
+
+        Browser kamu tidak mendukung video HTML5.
+
+      </video>
+
+      <div
+        class="video-lock-message"
+        id="videoLockMessage">
+
+        Konfirmasi usia 18+ untuk menonton
+
+      </div>
+
+    </div>
+
+    <div
+      class="meta"
+      id="meta">
+
+      18+ • Konfirmasi usia untuk menonton
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<script>
+
+/* =========================
+   ELEMENT
+   ========================= */
+
+const ageGate =
+  document.getElementById("ageGate");
+
+const ageYes =
+  document.getElementById("ageYes");
+
+const ageNo =
+  document.getElementById("ageNo");
+
+const videoContainer =
+  document.getElementById("videoContainer");
+
+const videoLockMessage =
+  document.getElementById("videoLockMessage");
+
+const video =
+  document.getElementById("video");
+
+const meta =
+  document.getElementById("meta");
+
+
+/* =========================
+   VIDEO DIKUNCI
+   ========================= */
+
+video.controls = false;
+
+
+/* =========================
+   FORMAT WAKTU
+   ========================= */
+
+function fmt(t){
+
+  if(!Number.isFinite(t)){
+    return "0:00";
+  }
+
+  const m =
+    Math.floor(t / 60);
+
+  const s =
+    Math.floor(t % 60)
+      .toString()
+      .padStart(2,"0");
+
+  return `${m}:${s}`;
+
+}
+
+
+/* =========================
+   USER 18+
+   ========================= */
+
+ageYes.addEventListener("click", function(){
+
+  ageGate.style.display = "none";
+
+  videoContainer.classList.remove("video-locked");
+
+  videoLockMessage.style.display = "none";
+
+  video.controls = true;
+
+  meta.textContent =
+    `0:00 / ${fmt(video.duration)}`;
+
+  /*
+   * Load Adcash setelah konfirmasi usia.
+   */
+  loadAdcash();
+
+});
+
+
+/* =========================
+   USER DI BAWAH 18
+   ========================= */
+
+ageNo.addEventListener("click", function(){
+
+  ageGate.innerHTML = `
+    <div class="age-box">
+
+      <div class="age-icon">
+        !
+      </div>
+
+      <h1>
+        Akses Ditolak
+      </h1>
+
+      <p>
+        Maaf, halaman ini hanya diperuntukkan
+        bagi pengguna berusia 18 tahun atau lebih.
+      </p>
+
+    </div>
+  `;
+
+});
+
+
+/* =========================
+   VIDEO TIMER
+   ========================= */
+
+video.addEventListener(
+  "loadedmetadata",
+  function(){
+
+    if(ageGate.style.display === "none"){
+
+      meta.textContent =
+        `0:00 / ${fmt(video.duration)}`;
+
+    }
+
+  }
+);
+
+
+video.addEventListener(
+  "timeupdate",
+  function(){
+
+    if(ageGate.style.display === "none"){
+
+      meta.textContent =
+        `${fmt(video.currentTime)} / ${fmt(video.duration)}`;
+
+    }
+
+  }
+);
+
+
+/* =========================
+   ADCASH AUTOTAG
+   ========================= */
+
+let adcashLoaded = false;
+
+function loadAdcash(){
+
+  if(adcashLoaded){
+    return;
+  }
+
+  adcashLoaded = true;
+
+  const script =
+    document.createElement("script");
+
+  script.id = "aclib";
+  script.type = "text/javascript";
+  script.src =
+    "https://acscdn.com/script/aclib.js";
+
+  script.onload = function(){
+
+    if(
+      window.aclib &&
+      typeof window.aclib.runAutoTag === "function"
+    ){
+
+      window.aclib.runAutoTag({
+        zoneId: "ebg8ziu4fx"
+      });
+
+    }
+
+  };
+
+  document.head.appendChild(script);
+
+}
+
+</script>
+
+</body>
+  </html>
