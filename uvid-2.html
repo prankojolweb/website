@@ -15,16 +15,18 @@
 
 body{
   font-family:Arial,Helvetica,sans-serif;
-  background:#fff;
+  background:#f0f2f5;
   color:#111;
 }
 
+/* HEADER */
 .header{
   height:76px;
   display:flex;
   align-items:center;
   justify-content:space-between;
   padding:0 18px;
+  background:#fff;
   border-bottom:1px solid #ddd;
 }
 
@@ -49,72 +51,162 @@ body{
 }
 
 .menu{
-  font-size:34px;
+  font-size:30px;
+  color:#222;
 }
 
+/* CONTAINER */
 .container{
   width:min(650px,100%);
   margin:auto;
-  padding:42px 18px 60px;
+  padding:24px 12px 50px;
+}
+
+/* PROFIL SALURAN */
+.channel{
+  background:#fff;
+  border-radius:14px;
+  padding:28px 18px 24px;
   text-align:center;
+  margin-bottom:14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.08);
 }
 
 .profile{
-  width:170px;
-  height:170px;
+  width:140px;
+  height:140px;
   border-radius:50%;
   object-fit:cover;
   background:#eee;
-  margin:0 auto 26px;
+  margin:0 auto 16px;
   display:block;
 }
 
 h1{
-  font-size:40px;
-  line-height:1.1;
-  margin-bottom:28px;
+  font-size:29px;
+  line-height:1.2;
+  margin-bottom:8px;
 }
 
+.followers{
+  color:#667781;
+  font-size:16px;
+}
+
+/* DESKRIPSI */
+.description{
+  background:#fff;
+  border-radius:14px;
+  padding:18px;
+  margin-bottom:14px;
+  color:#3b4a54;
+  font-size:16px;
+  line-height:1.5;
+}
+
+/* DAFTAR VIDEO */
 .video-list{
   display:grid;
-  gap:10px;
+  gap:12px;
+}
+
+.video-post{
+  background:#fff;
+  border-radius:14px;
+  padding:16px;
+  box-shadow:0 1px 2px rgba(0,0,0,.08);
+}
+
+.post-text{
+  font-size:17px;
+  line-height:1.45;
+  margin-bottom:12px;
 }
 
 .video-card{
   width:100%;
   border:0;
-  background:transparent;
+  background:#f0f2f5;
   color:#2869a8;
-  font-size:23px;
-  padding:7px;
+  font-size:19px;
+  padding:14px;
+  border-radius:10px;
   cursor:pointer;
+  text-align:left;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  transition:.2s;
 }
 
 .video-card:hover{
-  text-decoration:underline;
+  background:#e4e6e9;
+}
+
+.video-card:active{
+  transform:scale(.99);
 }
 
 .play{
+  flex:none;
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  width:32px;
-  height:32px;
-  margin-right:6px;
+  width:40px;
+  height:40px;
   border-radius:50%;
   background:#25d366;
   color:#fff;
-  font-size:14px;
+  font-size:17px;
 }
 
-.followers{
+.video-name{
+  font-weight:600;
+}
+
+.post-time{
+  color:#8696a0;
+  font-size:13px;
+  text-align:right;
+  margin-top:10px;
+}
+
+/* LIHAT SALURAN */
+.channel-button{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  width:100%;
+  max-width:420px;
+  margin:25px auto 0;
+  padding:14px 20px;
+  background:#25d366;
+  color:#fff;
+  text-decoration:none;
+  border-radius:30px;
   font-size:18px;
-  margin:25px 0;
+  font-weight:700;
 }
 
+.channel-button:hover{
+  background:#20bd5c;
+}
+
+.channel-followers{
+  text-align:center;
+  margin-top:10px;
+  color:#667781;
+  font-size:15px;
+}
+
+/* VIEWER */
 .viewer{
   display:none;
-  margin-top:28px;
+  background:#fff;
+  border-radius:14px;
+  padding:16px;
+  box-shadow:0 1px 3px rgba(0,0,0,.08);
 }
 
 .viewer.active{
@@ -126,55 +218,128 @@ h1{
   height:70vh;
   min-height:500px;
   border:0;
-  border-radius:14px;
+  border-radius:12px;
   background:#000;
 }
 
 .video-title{
-  font-size:22px;
+  font-size:21px;
   font-weight:700;
-  margin:16px 0;
+  margin:4px 0 14px;
 }
 
+/* TOMBOL KEMBALI */
 .back{
   border:0;
-  background:#f1f1f1;
+  background:#25d366;
+  color:#fff;
   padding:13px 22px;
   border-radius:30px;
-  font-size:17px;
+  font-size:16px;
   cursor:pointer;
   margin-top:15px;
+  font-weight:600;
 }
 
+.back:hover{
+  background:#20bd5c;
+}
+
+/* FOOTER */
 .footer{
   background:#111820;
   color:#fff;
   text-align:center;
   padding:25px 18px;
+  font-size:14px;
 }
 
+/* MOBILE */
 @media(max-width:600px){
 
+  .header{
+    height:64px;
+    padding:0 14px;
+  }
+
   .brand{
-    font-size:24px;
+    font-size:22px;
+  }
+
+  .wa-icon{
+    width:31px;
+    height:31px;
+    font-size:17px;
+  }
+
+  .menu{
+    font-size:27px;
+  }
+
+  .container{
+    padding:12px 8px 40px;
+  }
+
+  .channel{
+    padding:24px 14px 20px;
+    border-radius:12px;
   }
 
   .profile{
-    width:150px;
-    height:150px;
+    width:125px;
+    height:125px;
   }
 
   h1{
-    font-size:35px;
+    font-size:26px;
+  }
+
+  .followers{
+    font-size:15px;
+  }
+
+  .description{
+    font-size:15px;
+    border-radius:12px;
+  }
+
+  .video-post{
+    border-radius:12px;
+    padding:14px;
+  }
+
+  .post-text{
+    font-size:16px;
   }
 
   .video-card{
-    font-size:21px;
+    font-size:17px;
+    padding:12px;
+  }
+
+  .play{
+    width:38px;
+    height:38px;
+    font-size:15px;
+  }
+
+  .viewer{
+    padding:10px;
+    border-radius:12px;
   }
 
   .viewer iframe{
     height:65vh;
     min-height:450px;
+    border-radius:10px;
+  }
+
+  .video-title{
+    font-size:19px;
+  }
+
+  .channel-button{
+    font-size:17px;
   }
 }
 </style>
@@ -182,6 +347,7 @@ h1{
 
 <body>
 
+<!-- HEADER -->
 <header class="header">
 
   <div class="brand">
@@ -189,113 +355,280 @@ h1{
     <span>WhatsApp</span>
   </div>
 
-  <div class="menu">☰</div>
+  <div class="menu">⋮</div>
 
 </header>
 
 
 <main class="container">
 
-  <!-- FOTO PROFIL -->
-  <img
-    class="profile"
-    src="profil.jpg"
-    alt="Kumpulan Video Viral"
-  >
+  <!-- PROFIL SALURAN -->
+  <section class="channel">
 
-  <h1>KUMPULAN VIDEO VIRAL</h1>
+    <img
+      class="profile"
+      src="profil.jpg"
+      alt="Kumpulan Video Viral"
+    >
 
-
-  <!-- DAFTAR VIDEO -->
-
-  <section id="list">
-
-    <div class="video-list">
-
-      <button
-        class="video-card"
-        type="button"
-        data-title="Video Viral 01"
-        data-video="https://prankojolweb.github.io/webhub/uvid-1">
-        <span class="play">▶</span>
-        Video Viral 01
-      </button>
-
-
-      <button
-        class="video-card"
-        type="button"
-        data-title="Video Viral 02"
-        data-video="https://prankojolweb.github.io/webhub/uvid-2">
-        <span class="play">▶</span>
-        Video Viral 02
-      </button>
-
-
-      <button
-        class="video-card"
-        type="button"
-        data-title="Video Viral 03"
-        data-video="https://prankojolweb.github.io/webhub/uvid-3">
-        <span class="play">▶</span>
-        Video Viral 03
-      </button>
-
-
-      <button
-        class="video-card"
-        type="button"
-        data-title="Video Viral 04"
-        data-video="https://prankojolweb.github.io/webhub/uvid-4">
-        <span class="play">▶</span>
-        Video Viral 04
-      </button>
-
-
-      <button
-        class="video-card"
-        type="button"
-        data-title="Video Viral 05"
-        data-video="https://prankojolweb.github.io/webhub/uvid-5">
-        <span class="play">▶</span>
-        Video Viral 05
-      </button>
-
-
-      <button
-        class="video-card"
-        type="button"
-        data-title="Video Viral 06"
-        data-video="https://prankojolweb.github.io/webhub/uvid-6">
-        <span class="play">▶</span>
-        Video Viral 06
-      </button>
-
-
-      <button
-        class="video-card"
-        type="button"
-        data-title="Video Viral 07"
-        data-video="https://prankojolweb.github.io/webhub/uvid-7">
-        <span class="play">▶</span>
-        Video Viral 07
-      </button>
-
-    </div>
-
+    <h1>KUMPULAN VIDEO VIRAL</h1>
 
     <div class="followers">
-      7 video • Pilih video untuk menonton
+      800rb pengikut
     </div>
 
   </section>
 
 
-  <!-- PEMUTAR VIDEO / HALAMAN UVID -->
+  <!-- DESKRIPSI -->
+  <section class="description">
 
+    <strong>KUMPULAN VIDEO VIRAL</strong><br>
+
+    Kumpulan video viral terbaru dan menarik.
+    Pilih video di bawah untuk menonton.
+
+  </section>
+
+
+  <!-- DAFTAR VIDEO -->
+  <section id="list">
+
+    <div class="video-list">
+
+
+      <!-- VIDEO 01 -->
+      <article class="video-post">
+
+        <div class="post-text">
+          🎬 Video Viral 01
+        </div>
+
+        <button
+          class="video-card"
+          type="button"
+          data-title="Video Viral 01"
+          data-video="https://prankojolweb.github.io/webhub/uvid-1"
+        >
+
+          <span class="play">▶</span>
+
+          <span class="video-name">
+            Video Viral 01
+          </span>
+
+        </button>
+
+        <div class="post-time">
+          Baru saja
+        </div>
+
+      </article>
+
+
+      <!-- VIDEO 02 -->
+      <article class="video-post">
+
+        <div class="post-text">
+          🎬 Video Viral 02
+        </div>
+
+        <button
+          class="video-card"
+          type="button"
+          data-title="Video Viral 02"
+          data-video="https://prankojolweb.github.io/webhub/uvid-2"
+        >
+
+          <span class="play">▶</span>
+
+          <span class="video-name">
+            Video Viral 02
+          </span>
+
+        </button>
+
+        <div class="post-time">
+          Baru saja
+        </div>
+
+      </article>
+
+
+      <!-- VIDEO 03 -->
+      <article class="video-post">
+
+        <div class="post-text">
+          🎬 Video Viral 03
+        </div>
+
+        <button
+          class="video-card"
+          type="button"
+          data-title="Video Viral 03"
+          data-video="https://prankojolweb.github.io/webhub/uvid-3"
+        >
+
+          <span class="play">▶</span>
+
+          <span class="video-name">
+            Video Viral 03
+          </span>
+
+        </button>
+
+        <div class="post-time">
+          Baru saja
+        </div>
+
+      </article>
+
+
+      <!-- VIDEO 04 -->
+      <article class="video-post">
+
+        <div class="post-text">
+          🎬 Video Viral 04
+        </div>
+
+        <button
+          class="video-card"
+          type="button"
+          data-title="Video Viral 04"
+          data-video="https://prankojolweb.github.io/webhub/uvid-4"
+        >
+
+          <span class="play">▶</span>
+
+          <span class="video-name">
+            Video Viral 04
+          </span>
+
+        </button>
+
+        <div class="post-time">
+          Baru saja
+        </div>
+
+      </article>
+
+
+      <!-- VIDEO 05 -->
+      <article class="video-post">
+
+        <div class="post-text">
+          🎬 Video Viral 05
+        </div>
+
+        <button
+          class="video-card"
+          type="button"
+          data-title="Video Viral 05"
+          data-video="https://prankojolweb.github.io/webhub/uvid-5"
+        >
+
+          <span class="play">▶</span>
+
+          <span class="video-name">
+            Video Viral 05
+          </span>
+
+        </button>
+
+        <div class="post-time">
+          Baru saja
+        </div>
+
+      </article>
+
+
+      <!-- VIDEO 06 -->
+      <article class="video-post">
+
+        <div class="post-text">
+          🎬 Video Viral 06
+        </div>
+
+        <button
+          class="video-card"
+          type="button"
+          data-title="Video Viral 06"
+          data-video="https://prankojolweb.github.io/webhub/uvid-6"
+        >
+
+          <span class="play">▶</span>
+
+          <span class="video-name">
+            Video Viral 06
+          </span>
+
+        </button>
+
+        <div class="post-time">
+          Baru saja
+        </div>
+
+      </article>
+
+
+      <!-- VIDEO 07 -->
+      <article class="video-post">
+
+        <div class="post-text">
+          🎬 Video Viral 07
+        </div>
+
+        <button
+          class="video-card"
+          type="button"
+          data-title="Video Viral 07"
+          data-video="https://prankojolweb.github.io/webhub/uvid-7"
+        >
+
+          <span class="play">▶</span>
+
+          <span class="video-name">
+            Video Viral 07
+          </span>
+
+        </button>
+
+        <div class="post-time">
+          Baru saja
+        </div>
+
+      </article>
+
+
+    </div>
+
+
+    <!-- LIHAT SALURAN -->
+    <a
+      class="channel-button"
+      href="https://whatsapp.com/channel/0029VbC5UhqEquiLJacjlf33"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <span>☘</span>
+      Lihat Saluran
+    </a>
+
+    <div class="channel-followers">
+      800rb pengikut
+    </div>
+
+
+  </section>
+
+
+  <!-- PEMUTAR VIDEO -->
   <section id="viewer" class="viewer">
 
-    <div id="videoTitle" class="video-title"></div>
+    <div
+      id="videoTitle"
+      class="video-title">
+    </div>
 
     <iframe
       id="player"
@@ -310,14 +643,16 @@ h1{
       class="back"
       id="back"
       type="button">
-      ← Kembali ke daftar
+      ← Kembali ke saluran
     </button>
 
   </section>
 
+
 </main>
 
 
+<!-- FOOTER -->
 <footer class="footer">
   KUMPULAN VIDEO VIRAL
 </footer>
@@ -325,13 +660,19 @@ h1{
 
 <script>
 
-const list = document.getElementById("list");
+/* ELEMENT */
 
-const viewer = document.getElementById("viewer");
+const list =
+document.getElementById("list");
 
-const player = document.getElementById("player");
+const viewer =
+document.getElementById("viewer");
 
-const title = document.getElementById("videoTitle");
+const player =
+document.getElementById("player");
+
+const title =
+document.getElementById("videoTitle");
 
 
 /* KLIK VIDEO */
@@ -348,16 +689,21 @@ document
     const videoTitle =
     card.getAttribute("data-title");
 
+
     title.textContent =
     videoTitle;
+
 
     player.src =
     videoURL;
 
+
     list.style.display =
     "none";
 
+
     viewer.classList.add("active");
+
 
     window.scrollTo({
       top:0,
@@ -377,10 +723,13 @@ document
 
   player.src = "";
 
+
   viewer.classList.remove("active");
+
 
   list.style.display =
   "block";
+
 
   window.scrollTo({
     top:0,
