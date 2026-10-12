@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>MY COLLECTIONS</title>
+  <meta name="juicyads-site-verification" content="0fbd0d0cc10c3f0dd978dd504570773a">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg:#000; --surface:#141414; --surface-2:#1e1e1e; --line:#2a2a2a;
+      --text:#f2f2f2; --muted:#9a9a9a; --accent:#e50914; --select:#4c8dff;
+      --radius:16px;
+    }
+    *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+    html,body { background:var(--bg); color:var(--text); min-height:100%; }
+    body { font-family:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; -webkit-font-smoothing:antialiased; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px); }
+    button { font:inherit; color:inherit; background:none; border:0; cursor:pointer; }
+    img { max-width:100%; display:block; }
+    :focus-visible { outline:2px solid var(--select); outline-offset:3px; }
+    .hidden { display:none!important; }
+    .topbar { position:sticky; top:env(safe-area-inset-top,0px); z-index:10; display:flex; align-items:center; gap:14px; padding:14px 20px; background:var(--bg); border-bottom:1px solid var(--line); }
+    .logo-box { width:44px; height:44px; border-radius:10px; background:var(--text); color:var(--bg); display:grid; place-items:center; font-weight:800; font-size:22px; }
+    .brand { font-weight:700; font-size:22px; letter-spacing:-.01em; }
+    .gallery { max-width:720px; margin:0 auto; padding:22px 16px 40px; }
+    .gallery h1 { font-size:22px; font-weight:700; margin:0 4px 16px; }
+    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+    @media(min-width:700px) { .grid { grid-template-columns:repeat(3,minmax(0,1fr)); } }
+    .card { display:flex; flex-direction:column; gap:8px; padding:6px 6px 10px; border-radius:var(--radius); background:var(--surface); border:2px solid var(--line); text-align:center; }
+    .card:hover,.card.active { border-color:var(--select); }
+    .thumb { position:relative; aspect-ratio:9/16; width:100%; border-radius:12px; overflow:hidden; background:var(--surface-2); }
+    .thumb img,.thumb video { width:100%; height:100%; object-fit:cover; }
+    .thumb .auto-thumb { position:absolute; inset:0; pointer-events:none; }
+    .thumb .ph { position:absolute; inset:0; display:grid; place-items:center; background:linear-gradient(160deg,#262626,#0d0d0d); }
+    .thumb .ph svg { width:42px; height:42px; fill:#555; }
+    .card-label { font-size:16px; font-weight:600; }
+    .watch-bar { position:sticky; top:env(safe-area-inset-top,0px); z-index:10; display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:16px; padding:10px 20px; background:var(--bg); border-bottom:1px solid var(--line); }
+    .watch-brand { display:flex; align-items:center; gap:10px; font-weight:800; font-size:19px; }
+    .yt-icon { width:34px; height:24px; border-radius:6px; background:var(--accent); display:grid; place-items:center; }
+    .yt-icon svg { width:12px; height:12px; fill:#fff; }
+    .search { justify-self:center; width:100%; max-width:520px; display:flex; align-items:center; gap:8px; padding:9px 16px; border-radius:999px; background:var(--surface); border:1px solid var(--line); }
+    .search svg { width:16px; height:16px; fill:var(--muted); flex:none; }
+    .search input { flex:1; min-width:0; background:none; border:0; outline:0; color:var(--text); font:inherit; font-size:14px; }
+    .search input::placeholder { color:var(--muted); }
+    .back-btn { display:flex; align-items:center; gap:6px; padding:8px 14px; border-radius:999px; background:var(--surface-2); font-size:14px; font-weight:600; }
+    .back-btn svg { width:16px; height:16px; fill:currentColor; }
+    @media(max-width:600px) { .watch-bar { grid-template-columns:auto 1fr; } .search { grid-column:1/-1; grid-row:2; max-width:none; } .back-btn span { display:none; } }
+    .watch { max-width:780px; margin:0 auto; padding:16px 16px 48px; display:flex; flex-direction:column; gap:20px; }
+    .ad-slot { width:100%; min-height:100px; display:flex; justify-content:center; align-items:center; overflow:hidden; }
+    .player-card { border-radius:var(--radius); overflow:hidden; background:var(--surface); border:1px solid var(--line); width:100%; max-width:min(440px,calc(80svh * 9 / 16)); margin:0 auto; }
+    .player { position:relative; aspect-ratio:9/16; width:100%; background:radial-gradient(ellipse at 30% 20%,#1f1f1f,#000 70%); }
+    .player video { position:absolute; inset:0; width:100%; height:100%; background:#000; }
+    .player .player-preview { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; background:#000; pointer-events:none; }
+    .player::after { content:""; position:absolute; inset:0; pointer-events:none; background:linear-gradient(to top,rgba(0,0,0,.45),rgba(0,0,0,.1)); }
+    .player:has(.main-video)::after { display:none; }
+    .play-btn,.badge { z-index:2; }
+    .play-btn { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:72px; height:52px; border-radius:14px; background:var(--accent); display:grid; place-items:center; box-shadow:0 6px 24px rgba(229,9,20,.35); }
+    .play-btn svg { width:22px; height:22px; fill:#fff; margin-left:3px; }
+    .badge { position:absolute; right:12px; bottom:12px; padding:4px 8px; border-radius:4px; background:rgba(0,0,0,.75); font-size:12px; font-weight:700; }
+    .meta { display:flex; align-items:center; gap:14px; padding:14px 16px; }
+    .avatar { width:40px; height:40px; border-radius:50%; flex:none; background:var(--accent); color:#fff; display:grid; place-items:center; font-weight:700; }
+    .meta h2 { font-size:16px; font-weight:700; line-height:1.35; }
+    .meta p { font-size:13px; color:var(--muted); margin-top:3px; }
+    @media(prefers-reduced-motion:reduce) { * { transition:none!important; } }
+  </style>
+</head>
+<body>
+  <!-- JuicyAds PopUnder: dimuat hanya saat halaman pemutar dibuka -->
+  <section id="page-gallery">
+    <header class="topbar">
+      <div class="logo-box">V</div>
+      <div class="brand" id="brand1">MY COLLECTIONS</div>
+    </header>
+    <main class="gallery">
+      <h1>Galery Collections</h1>
+      <div class="grid" id="grid"></div>
+    </main>
+  </section>
+
+  <section id="page-watch" class="hidden">
+    <header class="watch-bar">
+      <div class="watch-brand">
+        <div class="yt-icon"><svg viewBox="0 0 10 10"><path d="M2 1l7 4-7 4z"/></svg></div>
+        <span id="brand2">MY COLLECTIONS</span>
+      </div>
+      <label class="search">
+        <svg viewBox="0 0 24 24"><path d="M10 2a8 8 0 016.3 12.9l5.4 5.4-1.4 1.4-5.4-5.4A8 8 0 1110 2zm0 2a6 6 0 100 12 6 6 0 000-12z"/></svg>
+        <input type="search" id="search" placeholder="Cari video...">
+      </label>
+      <button class="back-btn" id="backBtn" aria-label="Kembali ke galeri">
+        <svg viewBox="0 0 24 24"><path d="M15.4 5.4L14 4l-8 8 8 8 1.4-1.4L8.8 12z"/></svg>
+        <span>Kembali</span>
+      </button>
+    </header>
+    <main class="watch">
+      <!-- JuicyAds banner zona 1127489, 300x100 -->
+      <div class="ad-slot" id="juicy-banner">
+        <script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
+        <ins id="1127489" data-width="300" data-height="100"></ins>
+        <script type="text/javascript" data-cfasync="false" async>
+          (adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1127489});
+        </script>
+      </div>
+
+      <article class="player-card">
+        <div class="player" id="player">
+          <button class="play-btn" id="playBtn" aria-label="Putar video">
+            <svg viewBox="0 0 10 10"><path d="M2 1l7 4-7 4z"/></svg>
+          </button>
+          <span class="badge">PLAYLIST</span>
+        </div>
+        <div class="meta">
+          <div class="avatar" id="avatar">P</div>
+          <div>
+            <h2 id="videoTitle">Judul video</h2>
+            <p id="videoInfo"></p>
+          </div>
+        </div>
+      </article>
+    </main>
+  </section>
+
+  <script>
+    /* PENGATURAN */
+    const SITE_NAME = "MY COLLECTIONS";
+    const PLAYLIST_NAME = "Playlist Pilihan";
+
+    // Adsterra direct link: terbuka saat pengunjung mengeklik kotak video di galeri.
+    const DIRECT_LINK = "https://lectureheard.com/ptic14y0v1?key=941a2a16404c653fedf42f215b9b3b07";
+
+    // WPAdManager / adManager.js: ID terbaru yang diberikan.
+    const VIDEO_AD_SRC = "https://js.wpadmngr.com/static/adManager.js";
+    const VIDEO_AD_ID = "467995";
+
+    // JuicyAds PopUnder v3: kode terbaru yang diberikan.
+    const POPUNDER_SRC = "https://js.juicyads.com/jp.php?c=4474x2x2w264u4r2p2c4638434&u=https%3A%2F%2Fwww.juicyads.rocks";
+
+    // Video
+    const VIDEOS = [
+      { title:"Video Viral 1", thumb:"", adLink:"", src:"https://cdn.aceimg.com/WwKryHD1Y.mp4" },
+      { title:"Video Viral 2", thumb:"", adLink:"", src:"https://cdn.aceimg.com/jwiCCig4C.mp4" },
+      { title:"Video Viral 3", thumb:"", adLink:"", src:"https://cdn.aceimg.com/eDzlQzYkJ.mp4" },
+      { title:"Video Viral 4", thumb:"", adLink:"", src:"https://cdn.aceimg.com/MghcKCVeS.mp4" },
+      { title:"Video Viral 5", thumb:"", adLink:"", src:"https://cdn.aceimg.com/dMQMvWZUg.mp4" },
+      { title:"Video Viral 6", thumb:"", adLink:"", src:"https://cdn.aceimg.com/BlngzIN7I.mp4" },
+      { title:"Video Viral 7", thumb:"", adLink:"", src:"https://cdn.aceimg.com/aT9IAalTL.mp4" },
+      { title:"Video Viral 8", thumb:"", adLink:"", src:"https://cdn.aceimg.com/dAcMVBBcA.mp4" },
+      { title:"Video Viral 9", thumb:"", adLink:"", src:"https://cdn.aceimg.com/vQ0cGOw7Q.mp4" },
+      { title:"Video Viral 10", thumb:"", adLink:"", src:"https://cdn.aceimg.com/eNISAHrDw.mp4" }
+    ];
+    const THUMB_SECOND = 1;
+    const $ = id => document.getElementById(id);
+    const PLAY_ICON = '<svg viewBox="0 0 10 10"><path d="M2 1l7 4-7 4z"/></svg>';
+    let current = 0;
+    let popunderLoaded = false;
+    let managerLoaded = false;
+
+    $("brand1").textContent = SITE_NAME;
+    $("brand2").textContent = SITE_NAME;
+    document.title = SITE_NAME;
+
+    function thumbHTML(v) {
+      if (v.thumb) return `<img src="${v.thumb}" alt="" loading="lazy">`;
+      return `<div class="ph">${PLAY_ICON}</div><video class="auto-thumb" src="${v.src}#t=${THUMB_SECOND}" preload="metadata" muted playsinline disablepictureinpicture tabindex="-1" onerror="this.remove()"></video>`;
+    }
+
+    function renderGrid() {
+      $("grid").innerHTML = VIDEOS.map((v,i) => `
+        <button class="card ${i===current?'active':''}" data-i="${i}">
+          <div class="thumb">${thumbHTML(v)}</div>
+          <span class="card-label">${v.title}</span>
+        </button>`).join("");
+    }
+
+    $("grid").addEventListener("click", e => {
+      const card = e.target.closest(".card");
+      if (!card) return;
+      const v = VIDEOS[Number(card.dataset.i)];
+      const link = v.adLink || DIRECT_LINK;
+      // Buka direct link di tab baru saat klik pengguna; video tetap tersedia di tab asli.
+      if (link) window.open(link, "_blank", "noopener");
+      location.hash = "video=" + card.dataset.i;
+    });
+
+    function renderWatch(i) {
+      current = i;
+      const v = VIDEOS[i];
+      $("player").querySelectorAll(".main-video,.player-preview").forEach(el => el.remove());
+      $("playBtn").classList.remove("hidden");
+      let preview;
+      if (v.thumb) {
+        preview = document.createElement("img");
+        preview.src = v.thumb;
+        preview.alt = "";
+      } else {
+        preview = document.createElement("video");
+        preview.src = v.src + "#t=" + THUMB_SECOND;
+        preview.preload = "metadata";
+        preview.muted = true;
+        preview.playsInline = true;
+        preview.tabIndex = -1;
+        preview.onerror = () => preview.remove();
+      }
+      preview.className = "player-preview";
+      $("player").prepend(preview);
+      $("videoTitle").textContent = `${PLAYLIST_NAME} — ${v.title}`;
+      $("videoInfo").textContent = `${VIDEOS.length} video dalam playlist, sedang diputar #${i+1}`;
+      $("avatar").textContent = PLAYLIST_NAME.charAt(0).toUpperCase();
+    }
+
+    $("playBtn").addEventListener("click", () => {
+      const v = VIDEOS[current];
+      $("player").querySelectorAll(".player-preview").forEach(el => el.remove());
+      const vid = document.createElement("video");
+      vid.className = "main-video";
+      vid.src = v.src;
+      vid.controls = true;
+      vid.autoplay = true;
+      vid.playsInline = true;
+      if (v.thumb) vid.poster = v.thumb;
+      vid.addEventListener("ended", () => {
+        location.hash = "video=" + ((current+1) % VIDEOS.length);
+      });
+      $("player").prepend(vid);
+      $("playBtn").classList.add("hidden");
+      vid.play().catch(() => {});
+    });
+
+    $("search").addEventListener("keydown", e => {
+      if (e.key !== "Enter") return;
+      const q = e.target.value.trim().toLowerCase();
+      if (!q) return;
+      const idx = VIDEOS.findIndex(v => v.title.toLowerCase().includes(q));
+      if (idx >= 0) location.hash = "video=" + idx;
+      else {
+        e.target.value = "";
+        e.target.placeholder = `Tidak ada video berjudul "${q}"`;
+      }
+    });
+    $("backBtn").addEventListener("click", () => { location.hash = ""; });
+
+    function loadAds() {
+      if (!popunderLoaded && POPUNDER_SRC) {
+        const s = document.createElement("script");
+        s.src = POPUNDER_SRC;
+        s.async = true;
+        document.body.appendChild(s);
+        popunderLoaded = true;
+      }
+      if (!managerLoaded && VIDEO_AD_SRC) {
+        const s = document.createElement("script");
+        s.src = VIDEO_AD_SRC;
+        s.async = true;
+        s.setAttribute("data-admpid", VIDEO_AD_ID);
+        document.body.appendChild(s);
+        managerLoaded = true;
+      }
+    }
+
+    function route() {
+      const m = location.hash.match(/video=(\d+)/);
+      const i = m ? Number(m[1]) : -1;
+      if (i >= 0 && i < VIDEOS.length) {
+        $("page-gallery").classList.add("hidden");
+        $("page-watch").classList.remove("hidden");
+        $("search").value = "";
+        renderWatch(i);
+        loadAds();
+      } else {
+        if (popunderLoaded || managerLoaded) {
+          // Muat ulang untuk mengakhiri halaman pemutar saat kembali ke galeri.
+          location.replace(location.pathname + location.search);
+          return;
+        }
+        const old = $("player").querySelector(".main-video");
+        if (old) old.pause();
+        $("player").querySelectorAll(".main-video,.player-preview").forEach(el => el.remove());
+        $("page-watch").classList.add("hidden");
+        $("page-gallery").classList.remove("hidden");
+        renderGrid();
+      }
+      window.scrollTo(0,0);
+    }
+    window.addEventListener("hashchange", route);
+    route();
+  </script>
+
+  <!-- Histats visitor statistics -->
+  <script type="text/javascript">
+    var _Hasync = _Hasync || [];
+    _Hasync.push(['Histats.start', '1,4803938,4,0,0,0,00010000']);
+    _Hasync.push(['Histats.fasi', '1']);
+    _Hasync.push(['Histats.track_hits', '']);
+    (function() {
+      var hs = document.createElement('script');
+      hs.type = 'text/javascript';
+      hs.async = true;
+      hs.src = '//s10.histats.com/js15_as.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+    })();
+  </script>
+  <noscript><a href="/" target="_blank"><img src="//sstatic1.histats.com/0.gif?4803938&101" alt="" border="0"></a></noscript>
+
+  <!-- Ganti ProfitableRateCPMNetwork: link direct setelah 50 detik, dengan konfirmasi pengguna -->
+  <script>
+    (function () {
+      const DIRECT_AD_LINK = "https://conductivebreeds.com/aebqtyq13?key=be169d1d7e4dcde71d7003ff741d16db";
+      const DELAY = 50000;
+      setTimeout(function () {
+        if (window.confirm("Lanjutkan ke halaman pengiklan?")) {
+          window.location.href = DIRECT_AD_LINK;
+        }
+      }, DELAY);
+    })();
+  </script>
+
+</body>
+</html>
