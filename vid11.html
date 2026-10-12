@@ -7,7 +7,7 @@
 
 <meta name="juicyads-site-verification" content="0fbd0d0cc10c3f0dd978dd504570773a">
 
-<!-- ADMANAGER: DIMUAT SEKALI -->
+<!-- IN-PAGE ADMANAGER -->
 <script async src="https://js.wpadmngr.com/static/adManager.js" data-admpid="468042"></script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -137,6 +137,10 @@ const PLAYLIST_NAME="Playlist Pilihan";
 /* DIRECT LINK ADSTERRA */
 const DIRECT_LINK="https://conductivebreeds.com/aebqtyq13?key=be169d1d7e4dcde71d7003ff741d16db";
 
+/* ADMANAGER IKLAN DALAM SIARAN */
+const VIDEO_AD_SRC="https://js.wpadmngr.com/static/adManager.js";
+const VIDEO_AD_ID="467995";
+
 /* JUICYADS POPUNDER */
 const POPUNDER_SRC="https://js.juicyads.com/jp.php?c=4474x2x2w264u4r2p2c4638434&u=https%3A%2F%2Fwww.juicyads.rocks";
 
@@ -156,7 +160,7 @@ const VIDEOS=[
 const THUMB_SECOND=1;
 const $=id=>document.getElementById(id);
 const PLAY_ICON='<svg viewBox="0 0 10 10"><path d="M2 1l7 4-7 4z"/></svg>';
-let current=0,popunderLoaded=false;
+let current=0,popunderLoaded=false,videoAdLoaded=false;
 
 $("brand1").textContent=SITE_NAME;
 $("brand2").textContent=SITE_NAME;
@@ -223,7 +227,7 @@ $("playBtn").addEventListener("click",()=>{
   $("playBtn").classList.add("hidden");
 });
 
-/* POPUNDER JUICYADS */
+/* POPUNDER JUICYADS DAN IKLAN DALAM SIARAN */
 function loadPageAds(){
   if(!popunderLoaded){
     const p=document.createElement("script");
@@ -231,6 +235,14 @@ function loadPageAds(){
     p.async=true;
     document.body.appendChild(p);
     popunderLoaded=true;
+  }
+  if(!videoAdLoaded){
+    const s=document.createElement("script");
+    s.src=VIDEO_AD_SRC;
+    s.async=true;
+    s.setAttribute("data-admpid",VIDEO_AD_ID);
+    document.body.appendChild(s);
+    videoAdLoaded=true;
   }
 }
 
@@ -258,7 +270,7 @@ function route(){
     renderWatch(i);
     loadPageAds();
   }else{
-    if(popunderLoaded){
+    if(popunderLoaded||videoAdLoaded){
       location.replace(location.pathname+location.search);
       return;
     }
@@ -275,7 +287,7 @@ window.addEventListener("hashchange",route);
 route();
 </script>
 
-<!-- HISTATS COUNTER: ID BARU 5051765 -->
+<!-- HISTATS COUNTER BARU: ID 5051765 -->
 <div id="histats_counter"></div>
 <script type="text/javascript">
 var _Hasync = _Hasync || [];
