@@ -1,189 +1,97 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
-	<script data-cfasync="false" async type="text/javascript" src="//zo.brigeching.com/rovu6tZsJV9/141477"></script>
-<meta name="juicyads-site-verification" content="0fbd0d0cc10c3f0dd978dd504570773a">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>MY OCEN</title>
+
+<meta name="juicyads-site-verification" content="0fbd0d0cc10c3f0dd978dd504570773a">
+
+<!-- IN-PAGE ADMANAGER -->
+<script async src="https://js.wpadmngr.com/static/adManager.js" data-admpid="468042"></script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
-  :root{
-    --bg:#000000;
-    --surface:#141414;
-    --surface-2:#1e1e1e;
-    --line:#2a2a2a;
-    --text:#f2f2f2;
-    --muted:#9a9a9a;
-    --accent:#e50914;
-    --select:#4c8dff;
-    --radius:16px;
-    box-sizing:border-box;
-    padding-top:env(safe-area-inset-top,0px);
-    padding-bottom:env(safe-area-inset-bottom,0px);
-  }
-  *,*::before,*::after{box-sizing:inherit;margin:0;padding:0}
-  html,body{background:var(--bg);color:var(--text);min-height:100%}
-  body{font-family:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
-  button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
-  img{max-width:100%;display:block}
-  :focus-visible{outline:2px solid var(--select);outline-offset:3px}
-  .hidden{display:none !important}
-
-  /* ========== HALAMAN 1 : GALERI ========== */
-  .topbar{
-    position:sticky;top:env(safe-area-inset-top,0px);z-index:10;
-    display:flex;align-items:center;gap:14px;
-    padding:14px 20px;background:var(--bg);
-    border-bottom:1px solid var(--line);
-  }
-  .logo-box{
-    width:44px;height:44px;border-radius:10px;
-    background:var(--text);color:var(--bg);
-    display:grid;place-items:center;font-weight:800;font-size:22px;
-  }
-  .brand{font-weight:700;font-size:22px;letter-spacing:-.01em}
-
-  .gallery{max-width:720px;margin:0 auto;padding:22px 16px 40px}
-  .gallery h1{font-size:22px;font-weight:700;margin:0 4px 16px}
-  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-  @media (min-width:700px){.grid{grid-template-columns:repeat(3,1fr)}}
-
-  .card{
-    display:flex;flex-direction:column;gap:8px;
-    padding:6px 6px 10px;border-radius:var(--radius);
-    background:var(--surface);border:2px solid var(--line);
-    text-align:center;transition:border-color .15s;
-  }
-  .card:hover,.card.active{border-color:var(--select)}
-  .thumb{
-    position:relative;aspect-ratio:9/16;width:100%;
-    border-radius:12px;overflow:hidden;background:var(--surface-2);
-  }
-  .thumb img,.thumb video{width:100%;height:100%;object-fit:cover}
-  .thumb .auto-thumb{position:absolute;inset:0;pointer-events:none}
-  .thumb .ph{
-    position:absolute;inset:0;display:grid;place-items:center;
-    background:linear-gradient(160deg,#262626,#0d0d0d);
-  }
-  .thumb .ph svg{width:42px;height:42px;fill:#555}
-  .card-label{font-size:16px;font-weight:600}
-
-  /* ========== HALAMAN 2 : PEMUTAR ========== */
-  .watch-bar{
-    position:sticky;top:env(safe-area-inset-top,0px);z-index:10;
-    display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:16px;
-    padding:10px 20px;background:var(--bg);border-bottom:1px solid var(--line);
-  }
-  .watch-brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px}
-  .yt-icon{width:34px;height:24px;border-radius:6px;background:var(--accent);display:grid;place-items:center}
-  .yt-icon svg{width:12px;height:12px;fill:#fff}
-  .search{
-    justify-self:center;width:100%;max-width:520px;
-    display:flex;align-items:center;gap:8px;
-    padding:9px 16px;border-radius:999px;
-    background:var(--surface);border:1px solid var(--line);
-  }
-  .search svg{width:16px;height:16px;fill:var(--muted);flex:none}
-  .search input{flex:1;min-width:0;background:none;border:0;outline:0;color:var(--text);font:inherit;font-size:14px}
-  .search input::placeholder{color:var(--muted)}
-  .back-btn{
-    display:flex;align-items:center;gap:6px;
-    padding:8px 14px;border-radius:999px;background:var(--surface-2);font-size:14px;font-weight:600;
-  }
-  .back-btn svg{width:16px;height:16px;fill:currentColor}
-  @media (max-width:600px){
-    .watch-bar{grid-template-columns:auto 1fr;}
-    .search{grid-column:1/-1;grid-row:2;max-width:none}
-    .back-btn span{display:none}
-  }
-
-  .watch{max-width:780px;margin:0 auto;padding:16px 16px 48px;display:flex;flex-direction:column;gap:20px}
-  .ad-slot{
-    height:90px;border-radius:10px;border:1px dashed #333;background:var(--surface);
-    display:grid;place-items:center;color:#555;font-size:13px;
-  }
-
-  .player-card{
-    border-radius:var(--radius);overflow:hidden;background:var(--surface);border:1px solid var(--line);
-    /* 9:16 — lebar dibatasi supaya tinggi video muat di layar HP maupun laptop */
-    width:100%;max-width:min(440px, calc(80vh * 9 / 16));
-    max-width:min(440px, calc(80svh * 9 / 16));
-    margin:0 auto;
-  }
-  .player{
-    position:relative;aspect-ratio:9/16;width:100%;
-    background:radial-gradient(ellipse at 30% 20%,#1f1f1f,#000 70%);
-  }
-  .player video{position:absolute;inset:0;width:100%;height:100%;background:#000}
-  .player .player-preview{
-    position:absolute;inset:0;width:100%;height:100%;
-    object-fit:cover;background:#000;pointer-events:none;
-  }
-  /* sedikit gelap agar tombol play tetap menonjol */
-  .player::after{
-    content:"";position:absolute;inset:0;pointer-events:none;
-    background:linear-gradient(to top,rgba(0,0,0,.45),rgba(0,0,0,.1));
-  }
-  .player:has(.main-video)::after{display:none}
-  .play-btn,.badge{z-index:2}
-  .play-btn{
-    position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
-    width:72px;height:52px;border-radius:14px;background:var(--accent);
-    display:grid;place-items:center;box-shadow:0 6px 24px rgba(229,9,20,.35);
-    transition:transform .15s;
-  }
-  .play-btn:hover{transform:translate(-50%,-50%) scale(1.06)}
-  .play-btn svg{width:22px;height:22px;fill:#fff;margin-left:3px}
-  .badge{
-    position:absolute;right:12px;bottom:12px;
-    padding:4px 8px;border-radius:4px;background:rgba(0,0,0,.75);
-    font-size:12px;font-weight:700;
-  }
-  .meta{display:flex;align-items:center;gap:14px;padding:14px 16px}
-  .avatar{
-    width:40px;height:40px;border-radius:50%;flex:none;
-    background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;
-  }
-  .meta h2{font-size:16px;font-weight:700;line-height:1.35}
-  .meta p{font-size:13px;color:var(--muted);margin-top:3px}
-
-  .up-next h3{font-size:16px;font-weight:700;margin-bottom:12px}
-  .list{display:flex;flex-direction:column;gap:10px}
-  .row{
-    display:flex;align-items:center;gap:12px;padding:8px;border-radius:12px;
-    background:var(--surface);border:1px solid var(--line);text-align:left;
-  }
-  .row:hover,.row.now{border-color:var(--select)}
-  .row .thumb{width:64px;flex:none;border-radius:8px}
-  .row .thumb .ph svg{width:20px;height:20px}
-  .row strong{font-size:15px;font-weight:600}
-  .row small{display:block;color:var(--muted);font-size:12px;margin-top:2px}
-
-  @media (prefers-reduced-motion:reduce){*{transition:none !important}}
+:root{
+  --bg:#000;
+  --surface:#141414;
+  --surface-2:#1e1e1e;
+  --line:#2a2a2a;
+  --text:#f2f2f2;
+  --muted:#9a9a9a;
+  --accent:#e50914;
+  --select:#4c8dff;
+  --radius:16px;
+  box-sizing:border-box;
+}
+*,*::before,*::after{box-sizing:inherit;margin:0;padding:0}
+html,body{background:var(--bg);color:var(--text);min-height:100%}
+body{font-family:"Plus Jakarta Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+img{max-width:100%;display:block}
+.hidden{display:none!important}
+.topbar,.watch-bar{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
+.topbar{display:flex;align-items:center;gap:14px;padding:14px 20px}
+.logo-box{width:44px;height:44px;border-radius:10px;background:var(--text);color:var(--bg);display:grid;place-items:center;font-weight:800;font-size:22px}
+.brand{font-weight:700;font-size:22px}
+.gallery{max-width:720px;margin:auto;padding:22px 16px 40px}
+.gallery h1{font-size:22px;margin:0 4px 16px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+@media(min-width:700px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.card{display:flex;flex-direction:column;gap:8px;padding:6px 6px 10px;border-radius:var(--radius);background:var(--surface);border:2px solid var(--line);text-align:center}
+.card:hover,.card.active{border-color:var(--select)}
+.thumb{position:relative;aspect-ratio:9/16;width:100%;border-radius:12px;overflow:hidden;background:var(--surface-2)}
+.thumb img,.thumb video{width:100%;height:100%;object-fit:cover}
+.thumb .auto-thumb{position:absolute;inset:0;pointer-events:none}
+.ph{position:absolute;inset:0;display:grid;place-items:center;background:linear-gradient(160deg,#262626,#0d0d0d)}
+.ph svg{width:42px;height:42px;fill:#555}
+.card-label{font-size:16px;font-weight:600}
+.watch-bar{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:16px;padding:10px 20px}
+.watch-brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px}
+.yt-icon{width:34px;height:24px;border-radius:6px;background:var(--accent);display:grid;place-items:center}
+.yt-icon svg{width:12px;height:12px;fill:white}
+.search{justify-self:center;width:100%;max-width:520px;display:flex;align-items:center;gap:8px;padding:9px 16px;border-radius:999px;background:var(--surface);border:1px solid var(--line)}
+.search svg{width:16px;height:16px;fill:var(--muted);flex:none}
+.search input{flex:1;min-width:0;background:none;border:0;outline:0;color:var(--text);font:inherit;font-size:14px}
+.back-btn{padding:8px 14px;border-radius:999px;background:var(--surface-2);font-size:14px;font-weight:600}
+@media(max-width:600px){.watch-bar{grid-template-columns:auto 1fr}.search{grid-column:1/-1;grid-row:2;max-width:none}.back-btn span{display:none}}
+.watch{max-width:780px;margin:auto;padding:16px 16px 48px;display:flex;flex-direction:column;gap:20px}
+.banner-ad{width:100%;min-height:100px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.player-card{border-radius:var(--radius);overflow:hidden;background:var(--surface);border:1px solid var(--line);width:100%;max-width:min(440px,calc(80svh * 9 / 16));margin:auto}
+.player{position:relative;aspect-ratio:9/16;width:100%;background:#000}
+.player video{position:absolute;inset:0;width:100%;height:100%;background:#000}
+.player-preview{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#000;pointer-events:none}
+.player::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(to top,rgba(0,0,0,.45),rgba(0,0,0,.1))}
+.player:has(.main-video)::after{display:none}
+.play-btn,.badge{z-index:2}
+.play-btn{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:72px;height:52px;border-radius:14px;background:var(--accent);display:grid;place-items:center}
+.play-btn svg{width:22px;height:22px;fill:white;margin-left:3px}
+.badge{position:absolute;right:12px;bottom:12px;padding:4px 8px;border-radius:4px;background:#000c;font-size:12px;font-weight:700}
+.meta{display:flex;align-items:center;gap:14px;padding:14px 16px}
+.avatar{width:40px;height:40px;border-radius:50%;flex:none;background:var(--accent);display:grid;place-items:center;font-weight:700}
+.meta h2{font-size:16px;line-height:1.35}
+.meta p{font-size:13px;color:var(--muted);margin-top:3px}
 </style>
-<link rel="me" href="https://www.blogger.com/profile/06977851955590533334" />
-<meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
-<meta name='google-adsense-platform-domain' content='blogspot.com'/>
+
+<link rel="me" href="https://www.blogger.com/profile/06977851955590533334">
+<meta name="google-adsense-platform-account" content="ca-host-pub-1556223355139109">
+<meta name="google-adsense-platform-domain" content="blogspot.com">
 </head>
 <body>
 
-<!-- ================= HALAMAN 1 ================= -->
 <section id="page-gallery">
   <header class="topbar">
     <div class="logo-box">V</div>
     <div class="brand" id="brand1">MY COLLECTIONS</div>
   </header>
-
   <main class="gallery">
     <h1>Galery Collections</h1>
     <div class="grid" id="grid"></div>
   </main>
 </section>
 
-<!-- ================= HALAMAN 2 ================= -->
 <section id="page-watch" class="hidden">
   <header class="watch-bar">
     <div class="watch-brand">
@@ -194,17 +102,18 @@
       <svg viewBox="0 0 24 24"><path d="M10 2a8 8 0 016.3 12.9l5.4 5.4-1.4 1.4-5.4-5.4A8 8 0 1110 2zm0 2a6 6 0 100 12 6 6 0 000-12z"/></svg>
       <input type="search" id="search" placeholder="Cari video...">
     </label>
-    <button class="back-btn" id="backBtn" aria-label="Kembali ke galeri">
-      <svg viewBox="0 0 24 24"><path d="M15.4 5.4L14 4l-8 8 8 8 1.4-1.4L8.8 12z"/></svg>
-      <span>Kembali</span>
-    </button>
+    <button class="back-btn" id="backBtn"><span>Kembali</span></button>
   </header>
 
   <main class="watch">
-    <!-- Tempat iklan / banner (opsional, hapus jika tidak perlu) -->
-    <div class=""text-align: center; margin: 0 auto;"><script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
-		<ins id="1127489" data-width="300" data-height="100"></ins>
-		<script type="text/javascript" data-cfasync="false" async>(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1127489});</script></div>
+    <!-- JUICYADS BANNER -->
+    <div class="banner-ad">
+      <script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
+      <ins id="1127489" data-width="300" data-height="100"></ins>
+      <script type="text/javascript" data-cfasync="false" async>
+        (adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1127489});
+      </script>
+    </div>
 
     <article class="player-card">
       <div class="player" id="player">
@@ -215,240 +124,203 @@
       </div>
       <div class="meta">
         <div class="avatar" id="avatar">P</div>
-        <div>
-          <h2 id="videoTitle">Judul video</h2>
-          <p id="videoInfo"></p>
-        </div>
+        <div><h2 id="videoTitle">Judul video</h2><p id="videoInfo"></p></div>
       </div>
     </article>
-
   </main>
 </section>
 
 <script>
-/* =========================================================
-   PENGATURAN — ubah bagian ini saja
-   ========================================================= */
-const SITE_NAME = "MY COLLECTIONS";
-const PLAYLIST_NAME = "Playlist Pilihan";
+const SITE_NAME="MY COLLECTIONS";
+const PLAYLIST_NAME="Playlist Pilihan";
 
-// Direct link Adsterra — dibuka di tab baru setiap kali kotak galeri diklik
-const DIRECT_LINK = "https://conductivebreeds.com/aebqtyq13?key=be169d1d7e4dcde71d7003ff741d16db";
+/* DIRECT LINK ADSTERRA */
+const DIRECT_LINK="https://conductivebreeds.com/aebqtyq13?key=be169d1d7e4dcde71d7003ff741d16db";
 
-// Link script popunder Adsterra (ambil isi src="..." dari kode popunder Anda)
-// Contoh: "//pl12345678.example.com/ab/cd/ef/abcdef123456.js"
-// Hanya dimuat di halaman 2
-// Iklan video ClickAdilla — hanya dimuat di halaman 2
-// Ambil isi src="..." dan angka data-admpid="..." dari kode iklan Anda
-const VIDEO_AD_SRC = "https://js.wpadmngr.com/static/adManager.js";
-const VIDEO_AD_ID  = "467995";
+/* ADMANAGER IKLAN DALAM SIARAN */
+const VIDEO_AD_SRC="https://js.wpadmngr.com/static/adManager.js";
+const VIDEO_AD_ID="467995";
 
-const POPUNDER_SRC = "https://js.juicyads.com/jp.php?c=4474x2x2w264u4r2p2c4638434&u=https%3A%2F%2Fwww.juicyads.rocks";
+/* JUICYADS POPUNDER */
+const POPUNDER_SRC="https://js.juicyads.com/jp.php?c=4474x2x2w264u4r2p2c4638434&u=https%3A%2F%2Fwww.juicyads.rocks";
 
-// Daftar video. "src" = link file .mp4
-// "thumb" boleh dikosongkan -> thumbnail otomatis diambil dari frame video
-// "adLink" opsional -> direct link khusus untuk kotak ini (kalau kosong pakai DIRECT_LINK)
-const VIDEOS = [
-  { title: "Video Viral 1", 	thumb: "", adLink: "", src: "https://cdn.aceimg.com/WwKryHD1Y.mp4" },
-  { title: "Video Viral 2",     thumb: "", adLink: "", src: "https://cdn.aceimg.com/jwiCCig4C.mp4" },
-  { title: "Video Viral 3",     thumb: "", adLink: "", src: "https://cdn.aceimg.com/eDzlQzYkJ.mp4" },
-  { title: "Video Viral 4",     thumb: "", adLink: "", src: "https://cdn.aceimg.com/MghcKCVeS.mp4" },
-  { title: "Video Viral 5",     thumb: "", adLink: "", src: "https://cdn.aceimg.com/dMQMvWZUg.mp4" },
-  { title: "Video Viral 6",     thumb: "", adLink: "", src: "https://cdn.aceimg.com/BlngzIN7I.mp4" },
-  { title: "Video Viral 7",     thumb: "", adLink: "", src: "https://cdn.aceimg.com/aT9IAalTL.mp4" },
-  { title: "Video Viral 8",     thumb: "", adLink: "", src: "https://cdn.aceimg.com/dAcMVBBcA.mp4" },
-  { title: "Video Viral 9",     thumb: "", adLink: "", src: "https://cdn.aceimg.com/vQ0cGOw7Q.mp4" },
-  { title: "Video Viral 10",     thumb: "", adLink: "", src: "https://cdn.aceimg.com/eNISAHrDw.mp4" },
+const VIDEOS=[
+{title:"Video Viral 1",thumb:"",adLink:"",src:"https://cdn.aceimg.com/WwKryHD1Y.mp4"},
+{title:"Video Viral 2",thumb:"",adLink:"",src:"https://cdn.aceimg.com/jwiCCig4C.mp4"},
+{title:"Video Viral 3",thumb:"",adLink:"",src:"https://cdn.aceimg.com/eDzlQzYkJ.mp4"},
+{title:"Video Viral 4",thumb:"",adLink:"",src:"https://cdn.aceimg.com/MghcKCVeS.mp4"},
+{title:"Video Viral 5",thumb:"",adLink:"",src:"https://cdn.aceimg.com/dMQMvWZUg.mp4"},
+{title:"Video Viral 6",thumb:"",adLink:"",src:"https://cdn.aceimg.com/BlngzIN7I.mp4"},
+{title:"Video Viral 7",thumb:"",adLink:"",src:"https://cdn.aceimg.com/aT9IAalTL.mp4"},
+{title:"Video Viral 8",thumb:"",adLink:"",src:"https://cdn.aceimg.com/dAcMVBBcA.mp4"},
+{title:"Video Viral 9",thumb:"",adLink:"",src:"https://cdn.aceimg.com/vQ0cGOw7Q.mp4"},
+{title:"Video Viral 10",thumb:"",adLink:"",src:"https://cdn.aceimg.com/eNISAHrDw.mp4"}
 ];
 
-// Detik ke berapa frame thumbnail diambil
-const THUMB_SECOND = 1;
-/* ========================================================= */
+const THUMB_SECOND=1;
+const $=id=>document.getElementById(id);
+const PLAY_ICON='<svg viewBox="0 0 10 10"><path d="M2 1l7 4-7 4z"/></svg>';
+let current=0,popunderLoaded=false,videoAdLoaded=false;
 
-const $ = id => document.getElementById(id);
-const PLAY_ICON = '<svg viewBox="0 0 10 10"><path d="M2 1l7 4-7 4z"/></svg>';
-let current = 0;
-
-$("brand1").textContent = SITE_NAME;
-$("brand2").textContent = SITE_NAME;
-document.title = SITE_NAME;
+$("brand1").textContent=SITE_NAME;
+$("brand2").textContent=SITE_NAME;
+document.title=SITE_NAME;
 
 function thumbHTML(v){
-  if(v.thumb) return `<img src="${v.thumb}" alt="" loading="lazy">`;
-  // Ambil frame dari video itu sendiri; kalau gagal, video dihapus dan placeholder terlihat
-  return `<div class="ph">${PLAY_ICON}</div>
-    <video class="auto-thumb" src="${v.src}#t=${THUMB_SECOND}" preload="metadata"
-      muted playsinline disablepictureinpicture tabindex="-1"
-      onerror="this.remove()"></video>`;
+  if(v.thumb)return `<img src="${v.thumb}" alt="" loading="lazy">`;
+  return `<div class="ph">${PLAY_ICON}</div><video class="auto-thumb" src="${v.src}#t=${THUMB_SECOND}" preload="metadata" muted playsinline tabindex="-1" onerror="this.remove()"></video>`;
 }
 
-/* ---------- Halaman 1 ---------- */
 function renderGrid(){
-  $("grid").innerHTML = VIDEOS.map((v,i)=>`
+  $("grid").innerHTML=VIDEOS.map((v,i)=>`
     <button class="card ${i===current?'active':''}" data-i="${i}">
-      <div class="thumb">${thumbHTML(v)}</div>
-      <span class="card-label">${v.title}</span>
+      <div class="thumb">${thumbHTML(v)}</div><span class="card-label">${v.title}</span>
     </button>`).join("");
 }
-$("grid").addEventListener("click", e=>{
-  const card = e.target.closest(".card");
-  if(!card) return;
-  const v = VIDEOS[card.dataset.i];
-  const link = v.adLink || DIRECT_LINK;
-  // Direct link dibuka di tab baru (harus di dalam event klik agar tidak diblokir browser)
-  if(link) window.open(link, "_blank", "noopener");
-  location.hash = "video=" + card.dataset.i;
+
+$("grid").addEventListener("click",e=>{
+  const card=e.target.closest(".card");
+  if(!card)return;
+  const i=Number(card.dataset.i),v=VIDEOS[i],link=v.adLink||DIRECT_LINK;
+  if(link)window.open(link,"_blank","noopener");
+  location.hash="video="+i;
 });
 
-/* ---------- Halaman 2 ---------- */
 function renderWatch(i){
-  current = i;
-  const v = VIDEOS[i];
-
-  // reset pemutar ke tampilan tombol play
-  $("player").querySelectorAll(".main-video, .player-preview").forEach(el => el.remove());
+  current=i;
+  const v=VIDEOS[i];
+  $("player").querySelectorAll(".main-video,.player-preview").forEach(el=>el.remove());
   $("playBtn").classList.remove("hidden");
 
-  // Preview / thumbnail di pemutar: pakai "thumb" kalau ada, kalau tidak ambil frame dari video
   let preview;
   if(v.thumb){
-    preview = document.createElement("img");
-    preview.src = v.thumb;
-    preview.alt = "";
+    preview=document.createElement("img");
+    preview.src=v.thumb;
   }else{
-    preview = document.createElement("video");
-    preview.src = v.src + "#t=" + THUMB_SECOND;
-    preview.preload = "metadata";
-    preview.muted = true;
-    preview.playsInline = true;
-    preview.tabIndex = -1;
-    preview.onerror = () => preview.remove();
+    preview=document.createElement("video");
+    preview.src=v.src+"#t="+THUMB_SECOND;
+    preview.preload="metadata";
+    preview.muted=true;
+    preview.playsInline=true;
+    preview.tabIndex=-1;
+    preview.onerror=()=>preview.remove();
   }
-  preview.className = "player-preview";
+  preview.className="player-preview";
   $("player").prepend(preview);
-
-  $("videoTitle").textContent = `${PLAYLIST_NAME} — ${v.title}`;
-  $("videoInfo").textContent = `${VIDEOS.length} video dalam playlist, sedang diputar #${i+1}`;
-  $("avatar").textContent = PLAYLIST_NAME.charAt(0).toUpperCase();
+  $("videoTitle").textContent=`${PLAYLIST_NAME} — ${v.title}`;
+  $("videoInfo").textContent=`${VIDEOS.length} video dalam playlist, sedang diputar #${i+1}`;
+  $("avatar").textContent=PLAYLIST_NAME.charAt(0).toUpperCase();
 }
 
-$("playBtn").addEventListener("click", ()=>{
-  const v = VIDEOS[current];
-  $("player").querySelectorAll(".player-preview").forEach(el => el.remove());
-  const vid = document.createElement("video");
-  vid.className = "main-video";
-  vid.src = v.src;
-  vid.controls = true;
-  vid.autoplay = true;
-  vid.playsInline = true;
-  if(v.thumb) vid.poster = v.thumb;
-  // otomatis lanjut ke video berikutnya
-  vid.addEventListener("ended", ()=>{
-    location.hash = "video=" + ((current+1) % VIDEOS.length);
-  });
+$("playBtn").addEventListener("click",()=>{
+  const v=VIDEOS[current];
+  $("player").querySelectorAll(".player-preview").forEach(el=>el.remove());
+  const vid=document.createElement("video");
+  vid.className="main-video";
+  vid.src=v.src;
+  vid.controls=true;
+  vid.autoplay=true;
+  vid.playsInline=true;
+  if(v.thumb)vid.poster=v.thumb;
+  vid.addEventListener("ended",()=>location.hash="video="+((current+1)%VIDEOS.length));
   $("player").prepend(vid);
   $("playBtn").classList.add("hidden");
 });
 
-// Pencarian: ketik judul lalu tekan Enter -> langsung buka video yang cocok
-$("search").addEventListener("keydown", e=>{
-  if(e.key !== "Enter") return;
-  const q = e.target.value.trim().toLowerCase();
-  if(!q) return;
-  const idx = VIDEOS.findIndex(v => v.title.toLowerCase().includes(q));
-  if(idx >= 0){
-    location.hash = "video=" + idx;
-  }else{
-    e.target.value = "";
-    e.target.placeholder = `Tidak ada video berjudul "${q}"`;
+/* POPUNDER JUICYADS DAN IKLAN DALAM SIARAN */
+function loadPageAds(){
+  if(!popunderLoaded){
+    const p=document.createElement("script");
+    p.src=POPUNDER_SRC;
+    p.async=true;
+    document.body.appendChild(p);
+    popunderLoaded=true;
   }
-});
-$("backBtn").addEventListener("click", ()=>{ location.hash = ""; });
-
-/* ---------- Popunder: hanya aktif di halaman 2 ---------- */
-let popunderLoaded = false;
-function loadPopunder(){
-  if(popunderLoaded) return;
-
-  // Popunder JuicyAds
-  if(POPUNDER_SRC){
-    const s = document.createElement("script");
-    s.src = POPUNDER_SRC;
-    s.async = true;
+  if(!videoAdLoaded){
+    const s=document.createElement("script");
+    s.src=VIDEO_AD_SRC;
+    s.async=true;
+    s.setAttribute("data-admpid",VIDEO_AD_ID);
     document.body.appendChild(s);
+    videoAdLoaded=true;
   }
-
-  // AdManager
-  if(VIDEO_AD_SRC){
-    const v = document.createElement("script");
-    v.src = VIDEO_AD_SRC;
-    v.async = true;
-    v.setAttribute("data-admpid", VIDEO_AD_ID);
-    document.body.appendChild(v);
-  }
-
-  popunderLoaded = true;
 }
 
-/* ---------- Router: tukar halaman ---------- */
+$("search").addEventListener("keydown",e=>{
+  if(e.key!=="Enter")return;
+  const q=e.target.value.trim().toLowerCase();
+  if(!q)return;
+  const idx=VIDEOS.findIndex(v=>v.title.toLowerCase().includes(q));
+  if(idx>=0)location.hash="video="+idx;
+  else{
+    e.target.value="";
+    e.target.placeholder=`Tidak ada video berjudul "${q}"`;
+  }
+});
+
+$("backBtn").addEventListener("click",()=>{location.hash="";});
+
 function route(){
-  const m = location.hash.match(/video=(\d+)/);
-  const i = m ? +m[1] : -1;
-  if(i >= 0 && i < VIDEOS.length){
+  const m=location.hash.match(/video=(\d+)/);
+  const i=m?Number(m[1]):-1;
+  if(i>=0&&i<VIDEOS.length){
     $("page-gallery").classList.add("hidden");
     $("page-watch").classList.remove("hidden");
-    $("search").value = "";
+    $("search").value="";
     renderWatch(i);
-    loadPopunder();
+    loadPageAds();
   }else{
-    // Script popunder tidak bisa "dimatikan" setelah dimuat,
-    // jadi saat kembali ke galeri halaman dimuat ulang agar popunder benar-benar hilang
-    if(popunderLoaded){
-      location.replace(location.pathname + location.search);
+    if(popunderLoaded||videoAdLoaded){
+      location.replace(location.pathname+location.search);
       return;
     }
-    const old = $("player").querySelector(".main-video");
-    if(old) old.pause();
-    $("player").querySelectorAll(".main-video, .player-preview").forEach(el => el.remove());
+    const old=$("player").querySelector(".main-video");
+    if(old)old.pause();
+    $("player").querySelectorAll(".main-video,.player-preview").forEach(el=>el.remove());
     $("page-watch").classList.add("hidden");
     $("page-gallery").classList.remove("hidden");
     renderGrid();
   }
   window.scrollTo(0,0);
 }
-window.addEventListener("hashchange", route);
+window.addEventListener("hashchange",route);
 route();
 </script>
-	<!-- Histats.com  START  (aync)-->
-<script type="text/javascript">var _Hasync= _Hasync|| [];
-_Hasync.push(['Histats.start', '1,4803938,4,0,0,0,00010000']);
-_Hasync.push(['Histats.fasi', '1']);
-_Hasync.push(['Histats.track_hits', '']);
-(function() {
-var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
-hs.src = ('//s10.histats.com/js15_as.js');
-(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
-})();</script>
-<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4803938&101" alt="" border="0"></a></noscript>
-<!-- Histats.com  END  -->
-	<script>
-    var LINK_ID  = "https://lectureheard.com/ptic14y0v1?key=941a2a16404c653fedf42f215b9b3b07";
-    var LINK_ALL = "https://lectureheard.com/ptic14y0v1?key=941a2a16404c653fedf42f215b9b3b07";
 
-    var DELAY = 50000; // 15 detik
+<!-- HISTATS COUNTER -->
+<div id="histats_counter"></div>
+<script type="text/javascript">
+var _Hasync=_Hasync||[];
+_Hasync.push(['Histats.start','1,4803938,4,0,0,0,00010000']);
+_Hasync.push(['Histats.fasi','1']);
+_Hasync.push(['Histats.track_hits','']);
+(function(){
+var hs=document.createElement('script');
+hs.type='text/javascript';
+hs.async=true;
+hs.src='//s10.histats.com/js15_as.js';
+(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(hs);
+})();
+</script>
+<noscript><a href="/" target="_blank"><img src="//sstatic1.histats.com/0.gif?4803938&101" alt="" border="0"></a></noscript>
 
-    function geoip(g){
-      setTimeout(function(){
-        if (g && g.country === "ID") {
-          window.top.location.href = LINK_ID;
-        } else {
-          window.top.location.href = LINK_ALL;
-        }
-      }, DELAY);
+<!-- LINK OTOMATIS BERDASARKAN NEGARA -->
+<script>
+var LINK_ID="https://lectureheard.com/ptic14y0v1?key=941a2a16404c653fedf42f215b9b3b07";
+var LINK_ALL="https://lectureheard.com/ptic14y0v1?key=941a2a16404c653fedf42f215b9b3b07";
+var DELAY=50000;
+
+function geoip(g){
+  setTimeout(function(){
+    if(g&&g.country==="ID"){
+      window.top.location.href=LINK_ID;
+    }else{
+      window.top.location.href=LINK_ALL;
     }
-    </script>
+  },DELAY);
+}
+</script>
+<script src="https://get.geojs.io/v1/ip/country.js?callback=geoip"></script>
 
-    <script src="https://get.geojs.io/v1/ip/country.js?callback=geoip"></script>
-  	<script async src="https://js.wpadmngr.com/static/adManager.js" data-admpid="467995"></script>
 </body>
 </html>
