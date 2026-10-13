@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080808">
+<title>SPESIAL EDITION</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --red: #e50914;
+  --red-dark: #a80710;
+  --bg: #080808;
+  --card: #181818;
+  --text: #ffffff;
+  --muted: #a8a8a8;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 850px;
+  margin: auto;
+  padding: 16px 13px 30px;
+}
+
+/* HEADER */
+.header {
+  padding: 23px 16px;
+  text-align: center;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #1b1b1b, #090909);
+  border: 1px solid #303030;
+  margin-bottom: 17px;
+}
+
+.logo {
+  display: inline-block;
+  color: var(--red);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 4px;
+  margin-bottom: 12px;
+}
+
+.header h1 {
+  font-size: clamp(26px, 7vw, 39px);
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.header h1 span {
+  color: var(--red);
+}
+
+.header p {
+  color: #b7b7b7;
+  font-size: 12px;
+  line-height: 1.6;
+  margin-top: 9px;
+}
+
+/* TELEGRAM */
+.telegram-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
+  padding: 14px;
+  border-radius: 8px;
+  background: #168bd0;
+  color: white;
+  font-weight: 800;
+  font-size: 13px;
+  margin-bottom: 18px;
+  transition: .2s;
+}
+
+.telegram-button:hover {
+  background: #0879bc;
+  transform: translateY(-1px);
+}
+
+/* SEARCH */
+.search-box {
+  position: relative;
+  margin-bottom: 19px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 14px 14px 14px 43px;
+  background: #171717;
+  border: 1px solid #3b3b3b;
+  color: white;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+}
+
+.search-box input:focus {
+  border-color: var(--red);
+}
+
+.search-box input::placeholder {
+  color: #999;
+}
+
+.search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #aaa;
+  pointer-events: none;
+}
+
+/* SECTION TITLE */
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 20px 2px 12px;
+}
+
+.section-heading h2 {
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: .5px;
+}
+
+.section-heading h2 span {
+  color: var(--red);
+}
+
+.counter {
+  color: #999;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+/* HORIZONTAL LIST */
+.channel-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.channel-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-width: 0;
+  padding: 13px 12px;
+  border: 1px solid #292929;
+  border-radius: 10px;
+  background: linear-gradient(110deg, #1b1b1b, #111);
+  transition: border-color .2s, background .2s;
+}
+
+.channel-card:hover {
+  border-color: #6d171b;
+  background: #202020;
+}
+
+.number-box {
+  flex-shrink: 0;
+  width: 43px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #292929;
+  border-radius: 7px;
+  color: var(--red);
+  font-size: 17px;
+  font-weight: 900;
+}
+
+.channel-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.labels {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 4px 6px;
+  border-radius: 3px;
+  font-size: 9px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.tag-new {
+  background: var(--red);
+  color: white;
+}
+
+.tag-trending {
+  background: #f0c54a;
+  color: #111;
+}
+
+.channel-info h3 {
+  font-size: 13px;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+  font-weight: 700;
+}
+
+.channel-info p {
+  font-size: 10px;
+  color: #999;
+  margin-top: 5px;
+}
+
+.watch-button {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--red);
+  color: white;
+  font-size: 10px;
+  font-weight: 900;
+  padding: 11px 10px;
+  border-radius: 5px;
+  white-space: nowrap;
+  transition: .2s;
+}
+
+.watch-button:hover {
+  background: #b20710;
+}
+
+.empty-message {
+  display: none;
+  padding: 24px 12px;
+  text-align: center;
+  color: #aaa;
+  border: 1px solid #292929;
+  border-radius: 8px;
+  font-size: 13px;
+  margin-top: 12px;
+}
+
+/* ADVERTISEMENT */
+.ad-card {
+  margin-top: 22px;
+  padding: 17px 14px;
+  text-align: center;
+  background: #151515;
+  border: 1px solid #383838;
+  border-radius: 10px;
+}
+
+.ad-label {
+  display: inline-block;
+  color: #aaa;
+  border: 1px solid #444;
+  padding: 4px 8px;
+  border-radius: 3px;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  margin-bottom: 10px;
+}
+
+.ad-card p {
+  color: #bcbcbc;
+  font-size: 12px;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.ad-button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background: #292929;
+  border: 1px solid #444;
+  border-radius: 6px;
+  color: white;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: .5px;
+  transition: .2s;
+}
+
+.ad-button:hover {
+  background: #383838;
+  border-color: var(--red);
+}
+
+/* NEXT BUTTON */
+.next-button {
+  display: block;
+  text-align: center;
+  width: 100%;
+  margin-top: 15px;
+  padding: 15px 12px;
+  background: var(--red);
+  color: white;
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  border-radius: 7px;
+  transition: .2s;
+}
+
+.next-button:hover {
+  background: #b20710;
+}
+
+/* FOOTER */
+.footer {
+  border-top: 1px solid #292929;
+  margin-top: 28px;
+  padding: 18px 8px 5px;
+  text-align: center;
+  color: #888;
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+.footer strong {
+  color: var(--red);
+  letter-spacing: 1px;
+}
+
+/* SMALL SCREEN */
+@media (max-width: 360px) {
+  .container {
+    padding-left: 9px;
+    padding-right: 9px;
+  }
+
+  .channel-card {
+    gap: 8px;
+    padding: 10px 8px;
+  }
+
+  .number-box {
+    width: 34px;
+    height: 42px;
+    font-size: 14px;
+  }
+
+  .channel-info h3 {
+    font-size: 11px;
+  }
+
+  .watch-button {
+    font-size: 9px;
+    padding: 10px 7px;
+  }
+}
+</style>
+</head>
+
+<body>
+<main class="container">
+
+  <header class="header">
+    <div class="logo">SPECIAL COLLECTION</div>
+    <h1><span>SPESIAL</span> EDITION</h1>
+    <p>Koleksi pilihan • Tampilan premium merah-hitam</p>
+  </header>
+
+  <!-- TELEGRAM -->
+  <a
+    class="telegram-button"
+    href="https://t.me/AsupanVideyXyz"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    ✈ GABUNG CHANNEL TELEGRAM
+  </a>
+
+  <!-- SEARCH -->
+  <div class="search-box">
+    <span class="search-icon">⌕</span>
+    <input
+      type="search"
+      id="searchInput"
+      placeholder="Cari channel..."
+      aria-label="Cari channel"
+      autocomplete="off"
+    >
+  </div>
+
+  <div class="section-heading">
+    <h2><span>▶</span> DAFTAR CHANNEL</h2>
+    <span class="counter" id="counter">8 CHANNEL</span>
+  </div>
+
+  <section class="channel-list" id="channelList">
+
+    <!-- CHANNEL 1 -->
+    <article class="channel-card" data-title="KAK HENI APEMNYA PINK BANGET">
+      <div class="number-box">01</div>
+      <div class="channel-info">
+        <div class="labels">
+          <span class="tag tag-new">TERBARU</span>
+          <span class="tag tag-trending">TRENDING</span>
+        </div>
+        <h3>KAK HENI APEMNYA PINK BANGET</h3>
+        <p>SPESIAL EDITION</p>
+      </div>
+      <a class="watch-button" href="https://prankojolweb.github.io/webhub/uvid-1" target="_blank" rel="noopener noreferrer">▶ TONTON</a>
+    </article>
+
+    <!-- CHANNEL 2 -->
+    <article class="channel-card" data-title="KAK SINTA ASETNYA ISTIMEWA">
+      <div class="number-box">02</div>
+      <div class="channel-info">
+        <div class="labels">
+          <span class="tag tag-new">TERBARU</span>
+        </div>
+        <h3>KAK SINTA ASETNYA ISTIMEWA</h3>
+        <p>SPESIAL EDITION</p>
+      </div>
+      <a class="watch-button" href="https://prankojolweb.github.io/webhub/uvid-1" target="_blank" rel="noopener noreferrer">▶ TONTON</a>
+    </article>
+
+    <!-- CHANNEL 3 -->
+    <article class="channel-card" data-title="CHIKA ESEMAH GEMAR BEROLAHRAGA">
+      <div class="number-box">03</div>
+      <div class="channel-info">
+        <div class="labels">
+          <span class="tag tag-trending">TRENDING</span>
+        </div>
+        <h3>CHIKA ESEMAH GEMAR BEROLAHRAGA</h3>
+        <p>SPESIAL EDITION</p>
+      </div>
+      <a class="watch-button" href="https://prankojolweb.github.io/webhub/uvid-1" target="_blank" rel="noopener noreferrer">▶ TONTON</a>
+    </article>
+
+    <!-- CHANNEL 4 -->
+    <article class="channel-card" data-title="TALENT FANNY SUKA SINGKONG AYANG">
+      <div class="number-box">04</div>
+      <div class="channel-info">
+        <div class="labels">
+          <span class="tag tag-new">TERBARU</span>
+        </div>
+        <h3>TALENT FANNY SUKA SINGKONG AYANG</h3>
+        <p>SPESIAL EDITION</p>
+      </div>
+      <a class="watch-button" href="https://prankojolweb.github.io/webhub/uvid-1" target="_blank" rel="noopener noreferrer">▶ TONTON</a>
+    </article>
+
+    <!-- CHANNEL 5 -->
+    <article class="channel-card" data-title="DEK LAURA UPDATE KARYA BARU LAGI">
+      <div class="number-box">05</div>
+      <div class="channel-info">
+        <div class="labels">
+          <span class="tag tag-trending">TRENDING</span>
+        </div>
+        <h3>DEK LAURA UPDATE KARYA BARU LAGI</h3>
+        <p>SPESIAL EDITION</p>
+      </div>
+      <a class="watch-button" href="https://prankojolweb.github.io/webhub/uvid-1" target="_blank" rel="noopener noreferrer">▶ TONTON</a>
+    </article>
+
+    <!-- CHANNEL 6 -->
+    <article class="channel-card" data-title="CHINDO KACAMATA KENA CRT DI MUKA">
+      <div class="number-box">06</div>
+      <div class="channel-info">
+        <div class="labels">
+          <span class="tag tag-new">TERBARU</span>
+          <span class="tag tag-trending">TRENDING</span>
+        </div>
+        <h3>CHINDO KACAMATA KENA CRT DI MUKA</h3>
+        <p>SPESIAL EDITION</p>
+      </div>
+      <a class="watch-button" href="https://prankojolweb.github.io/webhub/uvid-1" target="_blank" rel="noopener noreferrer">▶ TONTON</a>
+    </article>
+
+    <!-- CHANNEL 7 -->
+    <article class="channel-card" data-title="NAVISA MASIH POLOS NYABAIN OMX">
+      <div class="number-box">07</div>
+      <div class="channel-info">
+        <div class="labels">
+          <span class="tag tag-new">TERBARU</span>
+        </div>
+        <h3>NAVISA MASIH POLOS NYABAIN OMX</h3>
+        <p>SPESIAL EDITION</p>
+      </div>
+      <a class="watch-button" href="https://prankojolweb.github.io/webhub/uvid-1" target="_blank" rel="noopener noreferrer">▶ TONTON</a>
+    </article>
+
+    <!-- CHANNEL 8 -->
+    <article class="channel-card" data-title="HIJAB HITAM TEMBEM ATAS BAWAH">
+      <div class="number-box">08</div>
+      <div class="channel-info">
+        <div class="labels">
+          <span class="tag tag-trending">TRENDING</span>
+        </div>
+        <h3>HIJAB HITAM TEMBEM ATAS BAWAH</h3>
+        <p>SPESIAL EDITION</p>
+      </div>
+      <a class="watch-button" href="https://prankojolweb.github.io/webhub/uvid-1" target="_blank" rel="noopener noreferrer">▶ TONTON</a>
+    </article>
+
+  </section>
+
+  <div class="empty-message" id="emptyMessage">
+    Channel tidak ditemukan. Coba kata kunci lain.
+  </div>
+
+  <!-- POSISI IKLAN 1 -->
+  <section class="ad-card">
+    <span class="ad-label">ADVERTISEMENT</span>
+    <p>Klik tombol di bawah untuk membuka tautan.</p>
+    <a
+      class="ad-button"
+      href="https://uplcm.com/4/11840997"
+      target="_blank"
+      rel="noopener noreferrer"
+    >BUKA TAUTAN</a>
+  </section>
+
+  <!-- POSISI IKLAN 2 -->
+  <section class="ad-card">
+    <span class="ad-label">ADVERTISEMENT</span>
+    <p>Lanjutkan melalui tautan berikut.</p>
+    <a
+      class="ad-button"
+      href="https://uplcm.com/4/11840997"
+      target="_blank"
+      rel="noopener noreferrer"
+    >LANJUTKAN</a>
+  </section>
+
+  <!-- TOMBOL BERIKUTNYA -->
+  <a
+    class="next-button"
+    href="https://uplcm.com/4/11840997"
+    target="_blank"
+    rel="noopener noreferrer"
+  >BERIKUTNYA →</a>
+
+  <footer class="footer">
+    <strong>SPESIAL EDITION</strong><br>
+    Netflix-inspired Red &amp; Black Design<br>
+    © 2026 All Rights Reserved
+  </footer>
+
+</main>
+
+<script>
+(function () {
+  const searchInput = document.getElementById("searchInput");
+  const cards = Array.from(document.querySelectorAll(".channel-card"));
+  const counter = document.getElementById("counter");
+  const emptyMessage = document.getElementById("emptyMessage");
+
+  function filterChannels() {
+    const keyword = searchInput.value.trim().toLocaleLowerCase("id-ID");
+    let visibleCount = 0;
+
+    cards.forEach(function (card) {
+      const title = (card.dataset.title || card.textContent)
+        .toLocaleLowerCase("id-ID");
+
+      const matched = title.includes(keyword);
+      card.style.display = matched ? "flex" : "none";
+
+      if (matched) visibleCount++;
+    });
+
+    counter.textContent = visibleCount + " CHANNEL";
+    emptyMessage.style.display = visibleCount === 0 ? "block" : "none";
+  }
+
+  searchInput.addEventListener("input", filterChannels);
+})();
+</script>
+
+</body>
+  </html>
