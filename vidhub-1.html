@@ -3,147 +3,570 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VIRAL EDITION</title>
+<meta name="theme-color" content="#090909">
+
+<title>SPESIAL EDITION</title>
+
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,Helvetica,sans-serif;background:#05060b;color:#fff;min-height:100vh;overflow-x:hidden}
-body:before{content:"";position:fixed;inset:0;background:radial-gradient(circle at 15% 20%,rgba(112,0,255,.22),transparent 30%),radial-gradient(circle at 85% 35%,rgba(255,0,75,.18),transparent 32%),radial-gradient(circle at 50% 90%,rgba(0,110,255,.12),transparent 35%);pointer-events:none;z-index:-1}
-.container{width:min(100%,820px);margin:auto;padding:16px 14px 40px}
-.topbar{height:65px;display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
-.logo{font-size:29px;font-weight:900;letter-spacing:-1.5px;animation:logoGlow 2.5s ease-in-out infinite alternate}
-.logo span{background:linear-gradient(90deg,#ff1744,#b000ff);-webkit-background-clip:text;color:transparent}
-.top-icons{font-size:30px;display:flex;gap:18px}
-.section-title{font-size:25px;font-weight:900;margin:34px 4px 16px}
-.section-title span{background:linear-gradient(90deg,#ff304b,#b000ff);-webkit-background-clip:text;color:transparent}
-.channels{display:flex;flex-direction:column;gap:12px}
-.channel{display:flex;align-items:center;gap:14px;padding:11px;border-radius:22px;background:linear-gradient(90deg,rgba(24,22,45,.96),rgba(12,11,22,.96));border:1px solid rgba(255,255,255,.15);cursor:pointer;transition:.2s;opacity:0;transform:translateX(-30px);animation:channelIn .7s ease forwards}
-.channel:hover{transform:translateY(-2px);border-color:#e600ff;box-shadow:0 0 22px rgba(170,0,255,.2)}
-.channel:nth-child(1){animation-delay:.1s}.channel:nth-child(2){animation-delay:.25s}.channel:nth-child(3){animation-delay:.4s}.channel:nth-child(4){animation-delay:.55s}.channel:nth-child(5){animation-delay:.7s}.channel:nth-child(6){animation-delay:.85s}.channel:nth-child(7){animation-delay:1s}.channel:nth-child(8){animation-delay:1.15s}
-.thumb{width:105px;height:78px;border-radius:16px;display:grid;place-items:center;font-size:38px;background:linear-gradient(135deg,#6c00ff,#ec008c);flex:none;animation:thumbFloat 3s ease-in-out infinite alternate}
-.channel:nth-child(2) .thumb{background:linear-gradient(135deg,#ff2020,#ff006a)}
-.channel:nth-child(3) .thumb{background:linear-gradient(135deg,#0074ff,#5c00ff)}
-.channel:nth-child(4) .thumb{background:linear-gradient(135deg,#ff007e,#8500ff)}
-.channel:nth-child(5) .thumb{background:linear-gradient(135deg,#ff9d00,#8c4b00)}
-.channel:nth-child(6) .thumb{background:linear-gradient(135deg,#00c9a7,#0061ff)}
-.channel:nth-child(7) .thumb{background:linear-gradient(135deg,#ff4d6d,#7b2ff7)}
-.channel:nth-child(8) .thumb{background:linear-gradient(135deg,#ffd000,#ff6a00)}
-.channel-info{flex:1;min-width:0}
-.channel-info h3{font-size:19px;margin-bottom:12px}
-.line{height:4px;width:105px;border-radius:5px;background:linear-gradient(90deg,#ff1744,#9d00ff);position:relative;overflow:hidden}
-.line:after{content:"";position:absolute;left:-60px;top:0;width:55px;height:100%;background:rgba(255,255,255,.7);transform:skewX(-25deg);animation:lineShine 2.2s infinite}
-.play{width:72px;height:72px;border-radius:50%;border:2px solid #fff;background:rgba(5,5,15,.75);color:#fff;font-size:31px;cursor:pointer;display:grid;place-items:center;padding-left:5px;box-shadow:0 0 25px rgba(255,0,180,.65);transition:.2s;animation:playPulse 1.8s ease-in-out infinite}
-.play:hover{transform:scale(1.08);background:#ff087e;animation:none}
-.small-play{width:48px;height:48px;font-size:20px;flex:none}
-.arrow{font-size:30px;color:#ddd;animation:arrowMove 1.2s ease-in-out infinite alternate}
-.next{margin:25px auto 0;display:block;padding:13px 34px;border-radius:30px;background:transparent;color:#fff;border:2px solid #c000ff;font-size:16px;font-weight:800;cursor:pointer;animation:nextGlow 2.3s ease-in-out infinite alternate}
-html{scroll-behavior:smooth}
-body:before{animation:bgPulse 7s ease-in-out infinite alternate}
-body:after{content:"";position:fixed;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(255,0,190,.22),transparent 68%);left:-100px;top:35%;pointer-events:none;z-index:-1;animation:lightMove 9s linear infinite}
-@keyframes bgPulse{0%{transform:scale(1);opacity:.65}100%{transform:scale(1.12);opacity:1}}
-@keyframes lightMove{0%{left:-120px;top:25%}50%{left:75%;top:55%}100%{left:-120px;top:80%}}
-@keyframes logoGlow{from{filter:drop-shadow(0 0 0 rgba(255,0,180,0))}to{filter:drop-shadow(0 0 12px rgba(255,0,180,.55))}}
-@keyframes channelIn{to{opacity:1;transform:translateX(0)}}
-@keyframes thumbFloat{from{transform:scale(1)}to{transform:scale(1.035)}}
-@keyframes lineShine{0%{left:-60px}55%,100%{left:130%}}
-@keyframes playPulse{0%,100%{box-shadow:0 0 18px rgba(255,0,180,.45)}50%{box-shadow:0 0 35px rgba(255,0,180,.9)}}
-@keyframes arrowMove{from{transform:translateX(0)}to{transform:translateX(5px)}}
-@keyframes nextGlow{from{box-shadow:0 0 8px rgba(190,0,255,.2)}to{box-shadow:0 0 24px rgba(255,0,120,.55)}}
-.spark{position:fixed;width:4px;height:4px;border-radius:50%;background:#fff;box-shadow:0 0 10px #fff;pointer-events:none;z-index:0;opacity:.7;animation:starFloat linear infinite}
-@keyframes starFloat{from{transform:translateY(105vh) scale(.5);opacity:0}15%{opacity:.8}85%{opacity:.8}to{transform:translateY(-10vh) scale(1.2);opacity:0}}
-@media(max-width:500px){.logo{font-size:25px}.thumb{width:92px;height:70px}.channel-info h3{font-size:17px}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important}}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --gold: #d4af37;
+  --gold-light: #ffe7a0;
+  --black: #090909;
+  --card: #151515;
+  --text: #f7f1df;
+  --muted: #a8a08b;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(ellipse at top, #29200c 0%, #101010 42%, #070707 100%);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+  padding: 18px 14px 35px;
+}
+
+/* HEADER */
+.header {
+  text-align: center;
+  padding: 24px 12px;
+  border: 1px solid rgba(212,175,55,.35);
+  border-radius: 18px;
+  background: linear-gradient(145deg, #1b1b1b, #090909);
+  box-shadow: 0 8px 30px rgba(0,0,0,.4);
+  margin-bottom: 20px;
+}
+
+.logo {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 4px;
+  color: var(--gold-light);
+  border: 1px solid var(--gold);
+  padding: 7px 13px;
+  border-radius: 30px;
+  margin-bottom: 14px;
+}
+
+.header h1 {
+  font-size: clamp(25px, 6vw, 38px);
+  line-height: 1.2;
+  font-weight: 900;
+  letter-spacing: 1px;
+  color: var(--gold-light);
+  text-shadow: 0 0 18px rgba(212,175,55,.2);
+}
+
+.header p {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* TELEGRAM */
+.telegram-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
+  margin: 0 0 20px;
+  padding: 14px;
+  border-radius: 12px;
+  color: #090909;
+  background: linear-gradient(135deg, #ffe7a0, #d4af37, #b68b1d);
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: .5px;
+  box-shadow: 0 5px 18px rgba(212,175,55,.14);
+  transition: .2s;
+}
+
+.telegram-button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+
+/* SEARCH */
+.search-box {
+  position: relative;
+  margin-bottom: 17px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 15px 16px 15px 45px;
+  border-radius: 12px;
+  border: 1px solid #4a4024;
+  outline: none;
+  background: #131313;
+  color: #fff;
+  font-size: 14px;
+  transition: .2s;
+}
+
+.search-box input:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(212,175,55,.1);
+}
+
+.search-box input::placeholder {
+  color: #898273;
+}
+
+.search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--gold);
+  font-size: 19px;
+  pointer-events: none;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin: 24px 2px 13px;
+}
+
+.section-heading h2 {
+  color: var(--gold-light);
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.counter {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* TWO-COLUMN CARDS */
+.channel-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.channel-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #3c321b;
+  border-radius: 14px;
+  background: linear-gradient(150deg, #1b1b1b, #101010);
+  box-shadow: 0 5px 18px rgba(0,0,0,.28);
+  transition: transform .2s, border-color .2s, box-shadow .2s;
+}
+
+.channel-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--gold);
+  box-shadow: 0 8px 24px rgba(212,175,55,.1);
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+  padding: 11px 10px 0;
+}
+
+.card-number {
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.status {
+  border: 1px solid rgba(212,175,55,.35);
+  color: var(--gold-light);
+  background: rgba(212,175,55,.08);
+  border-radius: 20px;
+  padding: 4px 7px;
+  font-size: 9px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 14px 11px 12px;
+}
+
+.channel-card h3 {
+  color: #f8f2e2;
+  font-size: 13px;
+  line-height: 1.5;
+  font-weight: 800;
+  overflow-wrap: anywhere;
+  margin-bottom: 12px;
+}
+
+.watch-button {
+  display: block;
+  text-align: center;
+  margin-top: auto;
+  padding: 11px 5px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #ffe7a0, #d4af37);
+  color: #111;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: .5px;
+  transition: .2s;
+}
+
+.watch-button:hover {
+  filter: brightness(1.12);
+}
+
+/* AD AREA */
+.ad-card {
+  margin-top: 22px;
+  padding: 17px 14px;
+  border: 1px dashed #74602b;
+  border-radius: 14px;
+  background: linear-gradient(145deg, #19160e, #111);
+  text-align: center;
+}
+
+.ad-label {
+  display: inline-block;
+  padding: 5px 10px;
+  margin-bottom: 9px;
+  border-radius: 20px;
+  border: 1px solid #625126;
+  color: var(--gold-light);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.ad-card p {
+  color: #b9b09b;
+  font-size: 12px;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.ad-button,
+.next-button {
+  display: block;
+  text-align: center;
+  padding: 13px 12px;
+  border-radius: 9px;
+  background: linear-gradient(135deg, #ffe7a0, #d4af37, #b68b1d);
+  color: #111;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .7px;
+  transition: .2s;
+}
+
+.ad-button:hover,
+.next-button:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+.next-button {
+  margin-top: 15px;
+  padding: 16px 12px;
+  font-size: 14px;
+  border-radius: 12px;
+}
+
+/* EMPTY SEARCH */
+.empty-message {
+  display: none;
+  padding: 28px 12px;
+  text-align: center;
+  color: var(--muted);
+  border: 1px solid #342d1c;
+  border-radius: 12px;
+  margin-top: 12px;
+  font-size: 13px;
+}
+
+/* FOOTER */
+.footer {
+  margin-top: 28px;
+  padding: 20px 10px 5px;
+  text-align: center;
+  border-top: 1px solid #302819;
+  color: #8e8777;
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+.footer strong {
+  color: var(--gold);
+}
+
+/* MOBILE */
+@media (max-width: 360px) {
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .channel-grid {
+    gap: 9px;
+  }
+
+  .channel-card h3 {
+    font-size: 12px;
+  }
+
+  .card-content {
+    padding: 12px 9px 10px;
+  }
+
+  .status {
+    font-size: 8px;
+    padding: 4px 5px;
+  }
+}
 </style>
 </head>
+
 <body>
-<div class="container">
-  <header class="topbar">
-    <div class="logo">▶ SPESIAL <span>EDITION</span></div>
-    <div class="top-icons">⌕ ☰</div>
+<main class="container">
+
+  <header class="header">
+    <div class="logo">✦ PREMIUM COLLECTION ✦</div>
+    <h1>SPESIAL EDITION</h1>
+    <p>Koleksi pilihan dalam tampilan premium hitam dan emas.</p>
   </header>
 
-  <h2 class="section-title">▣ &nbsp; PILIH <span>CHANEL</span></h2>
+  <a
+    class="telegram-button"
+    href="https://t.me/AsupanVideyXyz"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    ✈ GABUNG CHANNEL TELEGRAM
+  </a>
 
-  <div class="channels">
-
-    <div class="channel smartlink" data-smartlink="https://prankojolweb.github.io/webhub/uvid-1">
-      <div class="thumb">🎞️</div>
-      <div class="channel-info"><h3>TANTE KINA DI ANAL</h3><div class="line"></div></div>
-      <button class="play small-play" aria-label="Play">▶</button><div class="arrow">›</div>
-    </div>
-
-    <div class="channel smartlink" data-smartlink="https://uplcm.com/4/11840997">
-      <div class="thumb">🎬</div>
-      <div class="channel-info"><h3>SINTIYA DI GANBANG NELAYAN</h3><div class="line"></div></div>
-      <button class="play small-play" aria-label="Play">▶</button><div class="arrow">›</div>
-    </div>
-
-    <div class="channel smartlink" data-smartlink="https://prankojolweb.github.io/webhub/uvid-2">
-      <div class="thumb">🎞️</div>
-      <div class="channel-info"><h3>AMEL YANG LAGI VIRAL</h3><div class="line"></div></div>
-      <button class="play small-play" aria-label="Play">▶</button><div class="arrow">›</div>
-    </div>
-
-    <div class="channel smartlink" data-smartlink="https://uplcm.com/4/11840997">
-      <div class="thumb">★</div>
-      <div class="channel-info"><h3>SMA HIJAB DI PAKE DI HOTEL</h3><div class="line"></div></div>
-      <button class="play small-play" aria-label="Play">▶</button><div class="arrow">›</div>
-    </div>
-
-    <div class="channel smartlink" data-smartlink="https://prankojolweb.github.io/webhub/uvid-3">
-      <div class="thumb">📹</div>
-      <div class="channel-info"><h3>DEK LAURA UPDATE KARYA BARU LAGI</h3><div class="line"></div></div>
-      <button class="play small-play" aria-label="Play">▶</button><div class="arrow">›</div>
-    </div>
-
-    <div class="channel smartlink" data-smartlink="https://uplcm.com/4/11840997">
-      <div class="thumb">🎥</div>
-      <div class="channel-info"><h3>CHINDO KACAMATA KENA CRT DI MUKA</h3><div class="line"></div></div>
-      <button class="play small-play" aria-label="Play">▶</button><div class="arrow">›</div>
-    </div>
-
-    <div class="channel smartlink" data-smartlink="https://prankojolweb.github.io/webhub/uvid-4">
-      <div class="thumb">🍿</div>
-      <div class="channel-info"><h3>NAVISA MASIH POLOS NYABAIN OMX</h3><div class="line"></div></div>
-      <button class="play small-play" aria-label="Play">▶</button><div class="arrow">›</div>
-    </div>
-
-    <div class="channel smartlink" data-smartlink="https://prankojolweb.github.io/webhub/uvid-5">
-      <div class="thumb">⭐</div>
-      <div class="channel-info"><h3>HIJAB HITAM TEMBEM ATAS BAWAH</h3><div class="line"></div></div>
-      <button class="play small-play" aria-label="Play">▶</button><div class="arrow">›</div>
-    </div>
-
+  <div class="search-box">
+    <span class="search-icon">⌕</span>
+    <input
+      type="search"
+      id="searchInput"
+      placeholder="Cari nama channel..."
+      autocomplete="off"
+      aria-label="Cari nama channel"
+    >
   </div>
 
-  <button class="next smartlink" data-smartlink="https://uplcm.com/4/11840997">BERIKUTNYA &nbsp; →</button>
-</div>
+  <div class="section-heading">
+    <h2>✦ DAFTAR CHANNEL</h2>
+    <span class="counter" id="counter">8 CHANNEL</span>
+  </div>
+
+  <section class="channel-grid" id="channelGrid">
+
+    <!-- CHANNEL 1 -->
+    <article class="channel-card" data-title="KAK HENI APEMNYA PINK BANGET">
+      <div class="card-top">
+        <span class="card-number">EDISI 01</span>
+        <span class="status">KOLEKSI</span>
+      </div>
+      <div class="card-content">
+        <h3>KAK HENI APEMNYA PINK BANGET</h3>
+        <a class="watch-button" href="https://prankojolweb.github.io/webhub/uvid-1" target="_blank" rel="noopener noreferrer">▶ TONTON SEKARANG</a>
+      </div>
+    </article>
+
+    <!-- CHANNEL 2 -->
+    <article class="channel-card" data-title="KAK SINTA ASETNYA ISTIMEWA">
+      <div class="card-top">
+        <span class="card-number">EDISI 02</span>
+        <span class="status">KOLEKSI</span>
+      </div>
+      <div class="card-content">
+        <h3>KAK SINTA ASETNYA ISTIMEWA</h3>
+        <a class="watch-button" href="https://prankojolweb.github.io/webhub/uvid-1" target="_blank" rel="noopener noreferrer">▶ TONTON SEKARANG</a>
+      </div>
+    </article>
+
+    <!-- CHANNEL 3 -->
+    <article class="channel-card" data-title="CHIKA ESEMAH GEMAR BEROLAHRAGA">
+      <div class="card-top">
+        <span class="card-number">EDISI 03</span>
+        <span class="status">KOLEKSI</span>
+      </div>
+      <div class="card-content">
+        <h3>CHIKA ESEMAH GEMAR BEROLAHRAGA</h3>
+        <a class="watch-button" href="https://prankojolweb.github.io/webhub/uvid-1" target="_blank" rel="noopener noreferrer">▶ TONTON SEKARANG</a>
+      </div>
+    </article>
+
+    <!-- CHANNEL 4 -->
+    <article class="channel-card" data-title="TALENT FANNY SUKA SINGKONG AYANG">
+      <div class="card-top">
+        <span class="card-number">EDISI 04</span>
+        <span class="status">KOLEKSI</span>
+      </div>
+      <div class="card-content">
+        <h3>TALENT FANNY SUKA SINGKONG AYANG</h3>
+        <a class="watch-button" href="https://prankojolweb.github.io/webhub/uvid-1" target="_blank" rel="noopener noreferrer">▶ TONTON SEKARANG</a>
+      </div>
+    </article>
+
+    <!-- CHANNEL 5 -->
+    <article class="channel-card" data-title="DEK LAURA UPDATE KARYA BARU LAGI">
+      <div class="card-top">
+        <span class="card-number">EDISI 05</span>
+        <span class="status">KOLEKSI</span>
+      </div>
+      <div class="card-content">
+        <h3>DEK LAURA UPDATE KARYA BARU LAGI</h3>
+        <a class="watch-button" href="https://prankojolweb.github.io/webhub/uvid-1" target="_blank" rel="noopener noreferrer">▶ TONTON SEKARANG</a>
+      </div>
+    </article>
+
+    <!-- CHANNEL 6 -->
+    <article class="channel-card" data-title="CHINDO KACAMATA KENA CRT DI MUKA">
+      <div class="card-top">
+        <span class="card-number">EDISI 06</span>
+        <span class="status">KOLEKSI</span>
+      </div>
+      <div class="card-content">
+        <h3>CHINDO KACAMATA KENA CRT DI MUKA</h3>
+        <a class="watch-button" href="https://prankojolweb.github.io/webhub/uvid-1" target="_blank" rel="noopener noreferrer">▶ TONTON SEKARANG</a>
+      </div>
+    </article>
+
+    <!-- CHANNEL 7 -->
+    <article class="channel-card" data-title="NAVISA MASIH POLOS NYABAIN OMX">
+      <div class="card-top">
+        <span class="card-number">EDISI 07</span>
+        <span class="status">KOLEKSI</span>
+      </div>
+      <div class="card-content">
+        <h3>NAVISA MASIH POLOS NYABAIN OMX</h3>
+        <a class="watch-button" href="https://prankojolweb.github.io/webhub/uvid-1" target="_blank" rel="noopener noreferrer">▶ TONTON SEKARANG</a>
+      </div>
+    </article>
+
+    <!-- CHANNEL 8 -->
+    <article class="channel-card" data-title="HIJAB HITAM TEMBEM ATAS BAWAH">
+      <div class="card-top">
+        <span class="card-number">EDISI 08</span>
+        <span class="status">KOLEKSI</span>
+      </div>
+      <div class="card-content">
+        <h3>HIJAB HITAM TEMBEM ATAS BAWAH</h3>
+        <a class="watch-button" href="https://prankojolweb.github.io/webhub/uvid-1" target="_blank" rel="noopener noreferrer">▶ TONTON SEKARANG</a>
+      </div>
+    </article>
+
+  </section>
+
+  <div class="empty-message" id="emptyMessage">
+    Channel tidak ditemukan. Coba kata kunci lain.
+  </div>
+
+  <!-- POSISI IKLAN 1 -->
+  <section class="ad-card">
+    <span class="ad-label">ADVERTISEMENT</span>
+    <p>Lihat halaman berikutnya melalui tautan di bawah.</p>
+    <a
+      class="ad-button"
+      href="https://uplcm.com/4/11840997"
+      target="_blank"
+      rel="noopener noreferrer"
+    >BUKA TAUTAN</a>
+  </section>
+
+  <!-- POSISI IKLAN 2 -->
+  <section class="ad-card">
+    <span class="ad-label">ADVERTISEMENT</span>
+    <p>Ketuk tombol untuk melanjutkan.</p>
+    <a
+      class="ad-button"
+      href="https://uplcm.com/4/11840997"
+      target="_blank"
+      rel="noopener noreferrer"
+    >LANJUTKAN</a>
+  </section>
+
+  <!-- TOMBOL BERIKUTNYA -->
+  <a
+    class="next-button"
+    href="https://uplcm.com/4/11840997"
+    target="_blank"
+    rel="noopener noreferrer"
+  >BERIKUTNYA →</a>
+
+  <footer class="footer">
+    <strong>SPESIAL EDITION</strong><br>
+    Premium Black &amp; Gold Collection<br>
+    © 2026 All Rights Reserved
+  </footer>
+
+</main>
 
 <script>
-document.querySelectorAll(".smartlink").forEach(element => {
-  element.addEventListener("click", function(e) {
-    e.preventDefault();
-    const url = this.dataset.smartlink;
-    if (!url || url.includes("YOUR-SMARTLINK")) {
-      alert("Link belum diisi.");
-      return;
-    }
-    window.open(url, "_blank", "noopener,noreferrer");
-  });
-});
+(function () {
+  const searchInput = document.getElementById("searchInput");
+  const cards = Array.from(document.querySelectorAll(".channel-card"));
+  const counter = document.getElementById("counter");
+  const emptyMessage = document.getElementById("emptyMessage");
 
-(function(){
-  const count = 18;
-  for(let i=0;i<count;i++){
-    const s=document.createElement("span");
-    s.className="spark";
-    s.style.left=(Math.random()*100)+"%";
-    s.style.animationDuration=(5+Math.random()*8)+"s";
-    s.style.animationDelay=(-Math.random()*10)+"s";
-    s.style.opacity=(.25+Math.random()*.65);
-    s.style.transform="scale("+(0.5+Math.random()*1.2)+")";
-    document.body.appendChild(s);
+  function filterChannels() {
+    const keyword = searchInput.value
+      .trim()
+      .toLocaleLowerCase("id-ID");
+
+    let visibleCount = 0;
+
+    cards.forEach(function (card) {
+      const title = (card.dataset.title || card.textContent)
+        .toLocaleLowerCase("id-ID");
+
+      const match = title.includes(keyword);
+
+      card.style.display = match ? "flex" : "none";
+
+      if (match) visibleCount++;
+    });
+
+    counter.textContent = visibleCount + " CHANNEL";
+    emptyMessage.style.display = visibleCount === 0 ? "block" : "none";
   }
+
+  searchInput.addEventListener("input", filterChannels);
 })();
 </script>
+
 </body>
 </html>
