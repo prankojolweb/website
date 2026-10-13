@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#080726">
+<title>SPESIAL EDITION</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #070722;
+  --panel: #101039;
+  --purple: #b526ff;
+  --pink: #f044ff;
+  --blue: #20cfff;
+  --text: #ffffff;
+  --muted: #c0c2e5;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(ellipse at 10% 0%, #28105d 0%, transparent 40%),
+    radial-gradient(ellipse at 95% 35%, #101a56 0%, transparent 42%),
+    var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  padding-bottom: 95px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  max-width: 720px;
+  margin: auto;
+  padding: 22px 16px;
+}
+
+/* BRAND */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-icon {
+  width: 62px;
+  height: 62px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  font-size: 36px;
+  color: white;
+  border-radius: 19px;
+  background: linear-gradient(135deg, #3d8cff, #c52cff, #ff48d2);
+  box-shadow: 0 0 28px #a52cff70;
+}
+
+.brand-name {
+  font-size: 25px;
+  font-weight: 900;
+  line-height: 1.05;
+}
+
+.brand-name span {
+  display: block;
+  color: #c34dff;
+  margin-top: 3px;
+}
+
+.brand-subtitle {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+  margin-top: 7px;
+}
+
+.header-actions {
+  display: flex;
+  gap: 9px;
+  margin-left: auto;
+}
+
+.round-action {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #6552b8;
+  border-radius: 50%;
+  background: #17143d;
+  color: white;
+  font-size: 21px;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  margin-top: 28px;
+  padding: 19px 0 23px;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  display: block;
+  width: 115px;
+  height: 4px;
+  margin-top: 16px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #ed4aff, #6848ff, transparent);
+  box-shadow: 0 0 15px #c72dff;
+}
+
+.editor-pick {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 13px;
+  border: 1px solid #9144f5;
+  border-radius: 25px;
+  background: #35136a80;
+  color: #f1dfff;
+  font-size: 11px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: clamp(28px, 7vw, 43px);
+  font-weight: 900;
+  line-height: 1.12;
+  letter-spacing: -.5px;
+}
+
+.hero h1 span {
+  display: block;
+  color: #d35bff;
+  text-shadow: 0 0 20px #a52cff55;
+}
+
+.hero p {
+  margin-top: 13px;
+  max-width: 490px;
+  color: #d0d0ec;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* TELEGRAM */
+.telegram {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 14px;
+  border-radius: 13px;
+  border: 1px solid #7964ff;
+  background: linear-gradient(100deg, #37128a, #182d8b);
+  box-shadow: 0 0 20px #5935ff25;
+  color: white;
+  font-size: 13px;
+  font-weight: 800;
+  margin-bottom: 22px;
+}
+
+/* SEARCH */
+.search-wrap {
+  display: flex;
+  gap: 9px;
+  margin-bottom: 23px;
+}
+
+.search-wrap input {
+  width: 100%;
+  min-width: 0;
+  padding: 14px 15px;
+  border: 1px solid #514a91;
+  border-radius: 12px;
+  background: #111033;
+  color: white;
+  outline: none;
+  font-size: 14px;
+}
+
+.search-wrap input:focus {
+  border-color: #d14bff;
+  box-shadow: 0 0 14px #9b2fff33;
+}
+
+.search-wrap input::placeholder {
+  color: #a4a2c9;
+}
+
+/* SECTION */
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.section-head h2 {
+  font-size: 17px;
+  font-weight: 900;
+}
+
+.section-head h2 span {
+  color: #e35bff;
+  margin-right: 6px;
+}
+
+.total {
+  padding: 9px 12px;
+  border-radius: 25px;
+  border: 1px solid #5b37cb;
+  background: #26105b;
+  color: #eee4ff;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+/* CHANNEL CARDS */
+.channel-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.channel-card {
+  --glow: #b92cff;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-width: 0;
+  padding: 13px;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--glow) 75%, #ffffff 25%);
+  border-radius: 24px;
+  background:
+    radial-gradient(ellipse at 100% 0%, color-mix(in srgb, var(--glow) 23%, transparent), transparent 65%),
+    linear-gradient(120deg, #17103f, #0b1030 70%, #111039);
+  box-shadow:
+    inset 0 0 17px color-mix(in srgb, var(--glow) 12%, transparent),
+    0 0 13px color-mix(in srgb, var(--glow) 23%, transparent);
+}
+
+.channel-card:nth-child(2),
+.channel-card:nth-child(6) {
+  --glow: #20cfff;
+}
+
+.channel-card:nth-child(3),
+.channel-card:nth-child(7) {
+  --glow: #dc42ff;
+}
+
+.channel-card:nth-child(4),
+.channel-card:nth-child(8) {
+  --glow: #24e7c3;
+}
+
+.poster {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 105px;
+  height: 115px;
+  flex-shrink: 0;
+  border-radius: 17px;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--glow) 70%, white);
+  background:
+    radial-gradient(circle at 30% 20%, color-mix(in srgb, var(--glow) 75%, transparent), transparent 45%),
+    linear-gradient(145deg, #32216e, #10152f 60%, #201052);
+  box-shadow: 0 0 15px color-mix(in srgb, var(--glow) 22%, transparent);
+}
+
+.poster::before {
+  content: "✦";
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 23px;
+  color: white;
+  opacity: .7;
+}
+
+.poster-icon {
+  font-size: 39px;
+  filter: drop-shadow(0 0 9px var(--glow));
+}
+
+.hot-tag {
+  position: absolute;
+  left: 7px;
+  top: 7px;
+  padding: 5px 7px;
+  background: linear-gradient(90deg, #ef4cff, #843bff);
+  border-radius: 20px;
+  font-size: 9px;
+  font-weight: 900;
+  z-index: 1;
+}
+
+.channel-info {
+  min-width: 0;
+  flex: 1;
+}
+
+.channel-info h3 {
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.channel-info p {
+  margin-top: 7px;
+  color: #c5c6e8;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.category {
+  display: inline-block;
+  margin-top: 9px;
+  padding: 7px 9px;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #8629d8, #4d32b9);
+  color: white;
+  font-size: 9px;
+  font-weight: 900;
+  line-height: 1.3;
+}
+
+.play-button {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border: 1px solid #e9baff;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 20%, #f38aff, #8125ff 70%);
+  box-shadow: 0 0 18px color-mix(in srgb, var(--glow) 70%, transparent);
+  color: white;
+  font-size: 18px;
+  padding-left: 3px;
+  transition: transform .2s;
+}
+
+.play-button:hover {
+  transform: scale(1.08);
+}
+
+.channel-card:nth-child(2) .play-button {
+  background: radial-gradient(circle at 30% 20%, #8bf1ff, #087cff 75%);
+}
+
+.channel-card:nth-child(4) .play-button {
+  background: radial-gradient(circle at 30% 20%, #91ffe7, #00a994 75%);
+}
+
+/* AD */
+.ad-card {
+  margin-top: 22px;
+  padding: 17px;
+  text-align: center;
+  border: 1px solid #6550a8;
+  border-radius: 17px;
+  background: linear-gradient(130deg, #17103b, #101333);
+}
+
+.ad-label {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 5px 9px;
+  border-radius: 20px;
+  background: #32215e;
+  color: #d8b8ff;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.ad-card p {
+  color: #c6c5e4;
+  font-size: 12px;
+  line-height: 1.6;
+  margin-bottom: 13px;
+}
+
+.ad-button,
+.next-button {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 14px;
+  border-radius: 10px;
+  color: white;
+  font-weight: 900;
+  font-size: 12px;
+  background: linear-gradient(100deg, #a32cff, #583bff);
+  box-shadow: 0 0 17px #833cff30;
+}
+
+.next-button {
+  margin-top: 15px;
+  padding: 16px;
+  font-size: 14px;
+  background: linear-gradient(100deg, #e238ff, #6c36ff, #168dff);
+}
+
+/* EMPTY SEARCH */
+.empty-message {
+  display: none;
+  text-align: center;
+  padding: 24px 12px;
+  color: #c5c3e6;
+  font-size: 13px;
+}
+
+/* BOTTOM NAV */
+.bottom-nav {
+  position: fixed;
+  z-index: 20;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 6px calc(10px + env(safe-area-inset-bottom));
+  border: 1px solid #3c3473;
+  border-bottom: 0;
+  border-radius: 22px 22px 0 0;
+  background: rgba(8, 8, 35, .96);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 -5px 25px #08051c;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  min-width: 55px;
+  color: #aaa9d1;
+  font-size: 10px;
+  padding: 4px;
+}
+
+.nav-item .nav-icon {
+  font-size: 23px;
+}
+
+.nav-item.active {
+  color: #e47aff;
+  text-shadow: 0 0 13px #bd35ff;
+}
+
+.nav-item.active .nav-icon {
+  filter: drop-shadow(0 0 7px #cb43ff);
+}
+
+.footer {
+  margin: 28px 0 15px;
+  text-align: center;
+  color: #9998bd;
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+/* SMALL PHONE */
+@media (max-width: 390px) {
+  .container {
+    padding: 18px 11px;
+  }
+
+  .brand-name {
+    font-size: 21px;
+  }
+
+  .brand-icon {
+    width: 52px;
+    height: 52px;
+    font-size: 30px;
+  }
+
+  .header-actions {
+    gap: 6px;
+  }
+
+  .round-action {
+    width: 37px;
+    height: 37px;
+  }
+
+  .channel-card {
+    gap: 9px;
+    padding: 10px;
+    border-radius: 19px;
+  }
+
+  .poster {
+    width: 78px;
+    height: 94px;
+    border-radius: 13px;
+  }
+
+  .poster-icon {
+    font-size: 30px;
+  }
+
+  .channel-info h3 {
+    font-size: 12px;
+  }
+
+  .channel-info p {
+    font-size: 11px;
+  }
+
+  .category {
+    font-size: 8px;
+    padding: 6px 7px;
+  }
+
+  .play-button {
+    width: 39px;
+    height: 39px;
+    font-size: 15px;
+  }
+}
+</style>
+</head>
+
+<body>
+<main class="container">
+
+  <!-- HEADER -->
+  <header class="brand">
+    <div class="brand-icon">▶</div>
+
+    <div>
+      <div class="brand-name">
+        SPECIAL
+        <span>EDITION</span>
+      </div>
+      <p class="brand-subtitle">
+        Kreativitas Tanpa Batas<br>
+        Dalam Satu Aplikasi
+      </p>
+    </div>
+
+    <div class="header-actions">
+      <a class="round-action" href="#pencarian" aria-label="Cari">⌕</a>
+      <a class="round-action" href="#menu" aria-label="Menu">☰</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="editor-pick">☆ PILIHAN EDITOR · EDISI TERBARU</div>
+
+    <h1>
+      TEMUKAN SALURAN
+      <span>TERBAIK ANDA</span>
+    </h1>
+
+    <p>
+      Jelajahi koleksi pilihan, temukan inspirasi baru,
+      dan nikmati konten favoritmu di satu tempat.
+    </p>
+  </section>
+
+  <!-- TELEGRAM -->
+  <a
+    class="telegram"
+    href="https://t.me/AsupanVideyXyz"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    ✈ GABUNG CHANNEL TELEGRAM
+  </a>
+
+  <!-- SEARCH -->
+  <div class="search-wrap" id="pencarian">
+    <input
+      type="search"
+      id="searchInput"
+      placeholder="⌕ Cari saluran favorit..."
+      autocomplete="off"
+      aria-label="Cari channel"
+    >
+  </div>
+
+  <!-- CHANNEL LIST -->
+  <div class="section-head">
+    <h2><span>♨</span> SALURAN PILIHAN</h2>
+    <span class="total" id="counter">08 SALURAN →</span>
+  </div>
+
+  <section class="channel-list" id="channelList">
+
+    <article class="channel-card" data-title="KAK HENI APEMNYA PINK BANGET">
+      <div class="poster">
+        <span class="hot-tag">♨ HOT</span>
+        <span class="poster-icon">🏞️</span>
+      </div>
+      <div class="channel-info">
+        <h3>KAK HENI APEMNYA PINK BANGET</h3>
+        <p>Koleksi pilihan terbaru</p>
+        <span class="category">✦ PILIHAN EDITOR</span>
+      </div>
+      <a class="play-button" href="https://prankojolweb.github.io/webhub/uvid-1" target="_blank" rel="noopener noreferrer" aria-label="Buka channel 1">▶</a>
+    </article>
+
+    <article class="channel-card" data-title="KAK SINTA ASETNYA ISTIMEWA">
+      <div class="poster">
+        <span class="poster-icon">🎬</span>
+      </div>
+      <div class="channel-info">
+        <h3>KAK SINTA ASETNYA ISTIMEWA</h3>
+        <p>Di balik layar dan cerita</p>
+        <span class="category">▣ FILM & KREATIVITAS</span>
+      </div>
+      <a class="play-button" href="https://prankojolweb.github.io/webhub/uvid-1" target="_blank" rel="noopener noreferrer" aria-label="Buka channel 2">▶</a>
+    </article>
+
+    <article class="channel-card" data-title="CHIKA ESEMAH GEMAR BEROLAHRAGA">
+      <div class="poster">
+        <span class="poster-icon">🎞️</span>
+      </div>
+      <div class="channel-info">
+        <h3>CHIKA ESEMAH GEMAR BEROLAHRAGA</h3>
+        <p>Konten pilihan untukmu</p>
+        <span class="category">✧ KOLEKSI PILIHAN</span>
+      </div>
+      <a class="play-button" href="https://prankojolweb.github.io/webhub/uvid-1" target="_blank" rel="noopener noreferrer" aria-label="Buka channel 3">▶</a>
+    </article>
+
+    <article class="channel-card" data-title="TALENT FANNY SUKA SINGKONG AYANG">
+      <div class="poster">
+        <span class="poster-icon">💡</span>
+      </div>
+      <div class="channel-info">
+        <h3>TALENT FANNY SUKA SINGKONG AYANG</h3>
+        <p>Koleksi terbaru</p>
+        <span class="category">♡ PILIHAN HARI INI</span>
+      </div>
+      <a class="play-button" href="https://prankojolweb.github.io/webhub/uvid-1" target="_blank" rel="noopener noreferrer" aria-label="Buka channel 4">▶</a>
+    </article>
+
+    <article class="channel-card" data-title="DEK LAURA UPDATE KARYA BARU LAGI">
+      <div class="poster">
+        <span class="hot-tag">♨ HOT</span>
+        <span class="poster-icon">🎥</span>
+      </div>
+      <div class="channel-info">
+        <h3>DEK LAURA UPDATE KARYA BARU LAGI</h3>
+        <p>Update koleksi pilihan</p>
+        <span class="category">✦ TERBARU</span>
+      </div>
+      <a class="play-button" href="https://prankojolweb.github.io/webhub/uvid-1" target="_blank" rel="noopener noreferrer" aria-label="Buka channel 5">▶</a>
+    </article>
+
+    <article class="channel-card" data-title="CHINDO KACAMATA KENA CRT DI MUKA">
+      <div class="poster">
+        <span class="poster-icon">📹</span>
+      </div>
+      <div class="channel-info">
+        <h3>CHINDO KACAMATA KENA CRT DI MUKA</h3>
+        <p>Koleksi saluran pilihan</p>
+        <span class="category">▣ KOLEKSI VIDEO</span>
+      </div>
+      <a class="play-button" href="https://prankojolweb.github.io/webhub/uvid-1" target="_blank" rel="noopener noreferrer" aria-label="Buka channel 6">▶</a>
+    </article>
+
+    <article class="channel-card" data-title="NAVISA MASIH POLOS NYABAIN OMX">
+      <div class="poster">
+        <span class="poster-icon">🌌</span>
+      </div>
+      <div class="channel-info">
+        <h3>NAVISA MASIH POLOS NYABAIN OMX</h3>
+        <p>Jelajahi koleksi lainnya</p>
+        <span class="category">✧ PILIHAN EDITOR</span>
+      </div>
+      <a class="play-button" href="https://prankojolweb.github.io/webhub/uvid-1" target="_blank" rel="noopener noreferrer" aria-label="Buka channel 7">▶</a>
+    </article>
+
+    <article class="channel-card" data-title="HIJAB HITAM TEMBEM ATAS BAWAH">
+      <div class="poster">
+        <span class="hot-tag">♨ HOT</span>
+        <span class="poster-icon">🎬</span>
+      </div>
+      <div class="channel-info">
+        <h3>HIJAB HITAM TEMBEM ATAS BAWAH</h3>
+        <p>Temukan koleksi pilihan</p>
+        <span class="category">✦ TRENDING</span>
+      </div>
+      <a class="play-button" href="https://prankojolweb.github.io/webhub/uvid-1" target="_blank" rel="noopener noreferrer" aria-label="Buka channel 8">▶</a>
+    </article>
+
+  </section>
+
+  <div class="empty-message" id="emptyMessage">
+    Saluran tidak ditemukan. Coba kata kunci lain.
+  </div>
+
+  <!-- POSISI IKLAN 1 -->
+  <section class="ad-card">
+    <span class="ad-label">ADVERTISEMENT</span>
+    <p>Lanjutkan untuk membuka tautan.</p>
+    <a
+      class="ad-button"
+      href="https://uplcm.com/4/11840997"
+      target="_blank"
+      rel="noopener noreferrer"
+    >BUKA TAUTAN ↗</a>
+  </section>
+
+  <!-- POSISI IKLAN 2 -->
+  <section class="ad-card">
+    <span class="ad-label">ADVERTISEMENT</span>
+    <p>Temukan halaman selanjutnya melalui tombol berikut.</p>
+    <a
+      class="ad-button"
+      href="https://uplcm.com/4/11840997"
+      target="_blank"
+      rel="noopener noreferrer"
+    >LANJUTKAN ↗</a>
+  </section>
+
+  <!-- BERIKUTNYA -->
+  <a
+    class="next-button"
+    href="https://uplcm.com/4/11840997"
+    target="_blank"
+    rel="noopener noreferrer"
+  >BERIKUTNYA →</a>
+
+  <footer class="footer">
+    <strong>SPECIAL EDITION</strong><br>
+    Kreativitas Tanpa Batas Dalam Satu Aplikasi<br>
+    © 2026 All Rights Reserved
+  </footer>
+
+</main>
+
+<!-- BOTTOM NAVIGATION -->
+<nav class="bottom-nav" id="menu">
+  <a class="nav-item active" href="#">
+    <span class="nav-icon">⌂</span>
+    <span>Beranda</span>
+  </a>
+
+  <a class="nav-item" href="#channelList">
+    <span class="nav-icon">◎</span>
+    <span>Jelajahi</span>
+  </a>
+
+  <a class="nav-item" href="#channelList">
+    <span class="nav-icon">▷</span>
+    <span>Langganan</span>
+  </a>
+
+  <a class="nav-item" href="https://t.me/AsupanVideyXyz" target="_blank" rel="noopener noreferrer">
+    <span class="nav-icon">♙</span>
+    <span>Profil</span>
+  </a>
+</nav>
+
+<script>
+(function () {
+  const searchInput = document.getElementById("searchInput");
+  const cards = Array.from(document.querySelectorAll(".channel-card"));
+  const counter = document.getElementById("counter");
+  const emptyMessage = document.getElementById("emptyMessage");
+
+  function filterChannels() {
+    const keyword = searchInput.value.trim().toLocaleLowerCase("id-ID");
+    let visible = 0;
+
+    cards.forEach(function (card) {
+      const title = (card.dataset.title || "")
+        .toLocaleLowerCase("id-ID");
+      const matched = title.includes(keyword);
+
+      card.style.display = matched ? "flex" : "none";
+      if (matched) visible++;
+    });
+
+    counter.textContent = String(visible).padStart(2, "0") + " SALURAN →";
+    emptyMessage.style.display = visible === 0 ? "block" : "none";
+  }
+
+  searchInput.addEventListener("input", filterChannels);
+})();
+</script>
+
+</body>
+    </html>
