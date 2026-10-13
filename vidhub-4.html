@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#08051d">
+<title>SPESIAL EDITION</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;padding-bottom:75px;
+ background:radial-gradient(ellipse at top,#25104c,#09061e 55%,#040311);
+ color:#fff;font-family:Arial,sans-serif
+}
+header{
+ padding:17px;background:#0b0720eF;
+ border-bottom:1px solid #a52cff;
+ position:sticky;top:0;z-index:5
+}
+.brand{font-weight:900;font-size:19px;letter-spacing:1px}
+.brand span{color:#ed35ff}
+.wrap{max-width:800px;margin:auto;padding:18px 13px}
+.kicker{color:#65eaff;font-size:11px;letter-spacing:3px;font-weight:bold}
+h1{
+ font-size:34px;line-height:1.05;margin:10px 0;
+ background:linear-gradient(90deg,#fff,#ef69ff,#64eaff);
+ -webkit-background-clip:text;color:transparent
+}
+.hero p{font-size:13px;color:#c9c3e6}
+.search{margin:18px 0}
+.search input{
+ width:100%;padding:13px;border-radius:12px;
+ border:1px solid #7040ad;background:#120c2d;color:white
+}
+.section-title{display:flex;justify-content:space-between;margin:18px 2px 12px;font-weight:bold}
+.section-title small{color:#7eeeff}
+.channels{display:grid;gap:13px}
+.card{
+ display:grid;grid-template-columns:100px 1fr 43px;gap:11px;
+ align-items:center;padding:9px;border-radius:18px;
+ background:linear-gradient(120deg,#1b0b3b,#0b1533);
+ border:1px solid #c02bff;box-shadow:0 0 14px #9d25ff35
+}
+.card:nth-child(even){border-color:#13cfff}
+.thumb{width:100px;height:112px;object-fit:cover;border-radius:12px;background:#21133c}
+.info{min-width:0}
+.tag{
+ display:inline-block;padding:4px 7px;margin-bottom:6px;
+ border-radius:20px;background:#b51cff;font-size:9px;font-weight:bold
+}
+.card:nth-child(even) .tag{background:#087fc6}
+h2{font-size:12px;line-height:1.4;margin:0 0 6px}
+.desc{font-size:11px;color:#c9c3e6}
+.play{
+ width:41px;height:41px;border-radius:50%;display:grid;
+ place-items:center;text-decoration:none;color:white;font-size:19px;
+ background:linear-gradient(135deg,#f21cff,#712dff);
+ box-shadow:0 0 15px #d42aff80
+}
+.card:nth-child(even) .play{background:linear-gradient(135deg,#0ee5ff,#1768ff)}
+.adbox{
+ margin:20px 0 12px;padding:15px;text-align:center;
+ background:#130c2c;border:1px solid #6840a0;border-radius:15px
+}
+.adbox p{font-size:12px;color:#c9c3e6}
+.next,.telegram{
+ display:block;text-align:center;padding:14px;border-radius:12px;
+ color:white;text-decoration:none;font-weight:bold
+}
+.next{background:linear-gradient(90deg,#df1cff,#703cff,#00bdf7)}
+.telegram{margin-top:12px;background:#168bce}
+footer{text-align:center;color:#9189b6;font-size:10px;padding:22px}
+nav{
+ position:fixed;bottom:0;left:0;right:0;z-index:5;
+ display:flex;justify-content:space-around;
+ padding:12px 5px;background:#09061ef5;border-top:1px solid #6539a5
+}
+nav a{color:#c8bde9;text-decoration:none;text-align:center;font-size:10px}
+nav b{display:block;font-size:18px;margin-bottom:3px}
+@media(min-width:620px){
+ .channels{grid-template-columns:1fr 1fr}
+ .card{grid-template-columns:85px 1fr 40px}
+ .thumb{width:85px;height:105px}
+}
+</style>
+</head>
+<body>
+
+<header>
+ <div class="brand">✦ SPESIAL <span>EDITION</span></div>
+</header>
+
+<main class="wrap">
+ <section class="hero">
+  <div class="kicker">PREMIUM CHANNEL COLLECTION</div>
+  <h1>Konten Pilihan<br>Untuk Kamu</h1>
+  <p>Temukan koleksi terbaru dan jelajahi channel favoritmu.</p>
+ </section>
+
+ <div class="search">
+  <input id="search" type="search" placeholder="Cari channel...">
+ </div>
+
+ <div class="section-title">
+  <span>Channel Pilihan</span><small>8 CHANNEL</small>
+ </div>
+
+ <section class="channels" id="channels">
+
+  <article class="card" data-title="VLOG GAYA HIDUP HENI">
+   <img class="thumb" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&h=400&fit=crop" alt="Thumbnail Heni">
+   <div class="info"><span class="tag">✦ PILIHAN EDITOR</span><h2>VLOG GAYA HIDUP HENI</h2><div class="desc">Koleksi pilihan terbaru</div></div>
+   <a class="play" href="https://prankojolweb.github.io/webhub/uvid-1" aria-label="Tonton video">▶</a>
+  </article>
+
+  <article class="card" data-title="DIBALIK LAYAR BERSAMA SINTA">
+   <img class="thumb" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=300&h=400&fit=crop" alt="Thumbnail Sinta">
+   <div class="info"><span class="tag">▣ EKSKLUSIF</span><h2>DIBALIK LAYAR BERSAMA SINTA</h2><div class="desc">Di balik layar dan cerita</div></div>
+   <a class="play" href="https://prankojolweb.github.io/webhub/uvid-1" aria-label="Tonton video">▶</a>
+  </article>
+
+  <article class="card" data-title="UPDATE KARYA DEK LAURA">
+   <img class="thumb" src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=300&h=400&fit=crop" alt="Thumbnail Laura">
+   <div class="info"><span class="tag">✦ TERBARU</span><h2>UPDATE KARYA DEK LAURA</h2><div class="desc">Update koleksi pilihan</div></div>
+   <a class="play" href="https://prankojolweb.github.io/webhub/uvid-1" aria-label="Tonton video">▶</a>
+  </article>
+
+  <article class="card" data-title="TIPS KESEHATAN CHIKA">
+   <img class="thumb" src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=300&h=400&fit=crop" alt="Thumbnail Chika">
+   <div class="info"><span class="tag">♡ KOLEKSI PILIHAN</span><h2>TIPS KESEHATAN CHIKA</h2><div class="desc">Konten pilihan untukmu</div></div>
+   <a class="play" href="https://prankojolweb.github.io/webhub/uvid-1" aria-label="Tonton video">▶</a>
+  </article>
+
+  <article class="card" data-title="KAK HENI APEMNYA PINK BANGET">
+   <img class="thumb" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=300&h=400&fit=crop" alt="Thumbnail Heni">
+   <div class="info"><span class="tag">🔥 HOT</span><h2>KAK HENI APEMNYA PINK BANGET</h2><div class="desc">Koleksi pilihan terbaru</div></div>
+   <a class="play" href="https://prankojolweb.github.io/webhub/uvid-1" aria-label="Tonton video">▶</a>
+  </article>
+
+  <article class="card" data-title="KAK SINTA ASETNYA ISTIMEWA">
+   <img class="thumb" src="https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?w=300&h=400&fit=crop" alt="Thumbnail Sinta">
+   <div class="info"><span class="tag">🔥 HOT</span><h2>KAK SINTA ASETNYA ISTIMEWA</h2><div class="desc">Koleksi saluran pilihan</div></div>
+   <a class="play" href="https://prankojolweb.github.io/webhub/uvid-1" aria-label="Tonton video">▶</a>
+  </article>
+
+  <article class="card" data-title="TALENT FANNY SUKA SINGKONG AYANG">
+   <img class="thumb" src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=300&h=400&fit=crop" alt="Thumbnail Fanny">
+   <div class="info"><span class="tag">✦ TERBARU</span><h2>TALENT FANNY SUKA SINGKONG AYANG</h2><div class="desc">Jelajahi koleksi lainnya</div></div>
+   <a class="play" href="https://prankojolweb.github.io/webhub/uvid-1" aria-label="Tonton video">▶</a>
+  </article>
+
+  <article class="card" data-title="HIJAB HITAM TEMBEM ATAS BAWAH">
+   <img class="thumb" src="https://images.unsplash.com/photo-1583743814966-8936f37f4e5b?w=300&h=400&fit=crop" alt="Thumbnail hijab">
+   <div class="info"><span class="tag">★ TRENDING</span><h2>HIJAB HITAM TEMBEM ATAS BAWAH</h2><div class="desc">Temukan koleksi pilihan</div></div>
+   <a class="play" href="https://prankojolweb.github.io/webhub/uvid-1" aria-label="Tonton video">▶</a>
+  </article>
+
+ </section>
+
+ <section class="adbox">
+  <p>Ingin lanjut menjelajahi koleksi?</p>
+  <a class="next" href="https://uplcm.com/4/11840997" target="_blank" rel="noopener noreferrer">BERIKUTNYA ↗</a>
+ </section>
+
+ <a class="telegram" href="https://t.me/AsupanVideyXyz" target="_blank" rel="noopener noreferrer">✈ Gabung Channel Telegram</a>
+ <footer>© 2026 SPESIAL EDITION</footer>
+</main>
+
+<nav>
+ <a href="#"><b>⌂</b>Beranda</a>
+ <a href="#channels"><b>⌕</b>Jelajahi</a>
+ <a href="https://t.me/AsupanVideyXyz"><b>♡</b>Langganan</a>
+ <a href="https://t.me/AsupanVideyXyz"><b>♙</b>Profil</a>
+</nav>
+
+<script>
+const search=document.getElementById('search');
+search.addEventListener('input',()=>{
+ const q=search.value.trim().toLowerCase();
+ document.querySelectorAll('.card').forEach(card=>{
+  card.style.display=card.dataset.title.toLowerCase().includes(q)?'grid':'none';
+ });
+});
+</script>
+</body>
+                                                                                        </html>
